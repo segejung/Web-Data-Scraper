@@ -10,6 +10,7 @@
 ![Design 3](../images/Design3.png) 
 
 ## Design 4 
+![Design 4](../images/Design4.png) 
 
 ## Team Design
 

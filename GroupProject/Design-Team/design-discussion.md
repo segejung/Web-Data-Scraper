@@ -5,6 +5,7 @@
 
 ## Design 2 
 ![Design 2](../images/Design2.png)
+SeGe Jung
 
 ## Design 3
 ![Design 3](../images/Design3.png) 

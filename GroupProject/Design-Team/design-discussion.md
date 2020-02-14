@@ -60,8 +60,7 @@ RK: The design is simple, easy to read.
 BH:The text between classes help demonstrate their relationship and the flow of the design.
 
 ### Cons
-SJ: Lacks to show all of the requirements. Also the relationships between classes lack sophistication. All the arrows suggest same relationship between all classes whereas there might be association or aggregation relationships. 
-Would be upgraded with more details. For example, for the timer, you can write timer: int: 0..4. 
+SJ: All the arrows suggest same relationship between all classes whereas there might be association or aggregation relationships. 
 The requirements of player entering words that are more than two letters are not reflected in the class diagram. 
 There are two statistics: one is word and one is score. This is not reflected in the diagram.
 

@@ -78,6 +78,7 @@ Reason for Design 2: Design 2 had all of the classes identified and reflected mo
 Improvements: There were couple of improvements from Design 2 that could be developed to the final team design. 
 - Consolidated Play a Word Game UI, View Statistics UI, Adjust the Game Settings UI and placed it under Main UI to clean up the look of the diagram.
 - Created association between class WordGame and Statistics so that Statistics is globally available to class WordGame. 
+- Statistics and wordstatistics class diagrams were imported from Design 1.
 
 ## Summary
 SJ: All the team members had solid structure in their UML class diagrams. The level of detailed differed, however, by group effort, we maximized our pros and minimized our cons. 

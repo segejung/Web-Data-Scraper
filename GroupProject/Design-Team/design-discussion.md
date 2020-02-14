@@ -24,6 +24,8 @@ SJ: UI could be consolidated into one Main UI.
 
 RK: No global access to each game's score/settings etc.
 
+BH: Could remove simple methods such as subtractFivePoints and simply subtract five points from the score during a reroll. 
+
 ## Design 3 [Brian Hoang]
 ![Design 3](../images/Design3.png) 
 ### Pros
@@ -35,8 +37,6 @@ RK: The classes contained all necessary fields/methods.
 SJ: It would be worth articulating the enterWord() method as it is listed as one of the requirements. What constitutes a word? There is no information on what the board will consist of. Vowels, weights, letter ‘Qu’, or the size. Would like to see some more classes articulating this work. Aggregation of board can be classes letters and word.
 
 RK: The classes are interconnected so the structure is not as clear.
-
-BH: Could remove simple methods such as subtractFivePoints and simply subtract five points from the score during a reroll. 
 
 ## Design 4 [Mo Yang]
 ![Design 4](../images/Design4.png) 

@@ -3,14 +3,15 @@
 ## Design 1 [Roger Kiew]
 ![Design 1](../images/Design1.png)
 ### Pros
-SJ: The cleanest looking UML from our team.
+SJ: The cleanest looking UML from our team. It has a global variable that scores and settings are accessed from. 
 ### Cons
-SJ: The class diagram is broad and does not address a lot of the detail in the requirements. More details would have helped for enterWord(), statistics, and initializeBoard. Probably need statistics class to be added.
+SJ: The class diagram is broad and does not address a lot of the detail in the requirements. The diagram could help with more detail on enterWord(), statistics, and initializeBoard. 
 
 ## Design 2 [SeGe Jung]
 ![Design 2](../images/Design2.png)
 ### Pros
 ### Cons
+SJ: UI could be consolidated into one Main UI
 
 ## Design 3 [Brian Hoang]
 ![Design 3](../images/Design3.png) 

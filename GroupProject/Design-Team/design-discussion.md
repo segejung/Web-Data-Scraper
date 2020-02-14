@@ -80,3 +80,4 @@ BH: We discussed our designs over a screen-share on Microsoft Teams and it was g
 
 MY: It was great to share each team member's thoughts on our last assigment and review all four designs together. We really learned a lot by examining each design's pros and cons. Then we summarized all the things into our final design, which shows a clear structure of classes while maintaing a good amount of details to indicate the relationship of how the game works.
 
+RK: All of our designs looked good at first but when we compared them to each other's design, there were some rooms for improvements. I am glad that we got a chance to see how other people will approach the requirements and we all learned from each other.

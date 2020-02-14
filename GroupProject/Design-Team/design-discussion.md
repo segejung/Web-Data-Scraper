@@ -69,7 +69,7 @@ RK: The arrows are a little bit confusing. For example, which line does "minus 5
 BH:A separate class for game settings may be ideal. More details on the methods of classes would help display how the design fulfills the requirements. 
 
 ## Team Design 
-![Team Design](../images/DesignTeam112.png) 
+![Team Design](../images/TeamDesign.png) 
 
 During the meeting, we went over individual UML class diagrams. Then we chose one design that everyone liked the most. Design 2 was chosen as the basis of team design. From that, everyone commented on things to improve. 
 

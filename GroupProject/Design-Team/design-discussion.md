@@ -1,9 +1,10 @@
 # Design Discussion
 
-## Design 1 
+## Design 1 [Roger Kiew]
 ![Design 1](../images/Design1.png)
 ### Pros
 ### Cons
+SJ: The class diagram is broad and does not address a lot of the detail in the requirements. More details would have helped for enterWord(), statistics, and initializeBoard. Probably need statistics class to be added.
 
 ## Design 2 [SeGe Jung]
 ![Design 2](../images/Design2.png)
@@ -32,3 +33,5 @@ There are two statistics: one is word and one is score. This is not reflected in
 
 
 ## Summary
+SJ: All the team members had solid structure in their UML class diagrams. The level of detailed differed, however, by group effort, we maximized our pros and minimized our cons. 
+This process was done through weekly meetings and threads in Microsoft Teams. 

@@ -72,9 +72,11 @@ BH:A separate class for game settings may be ideal. More details on the methods 
 ![Team Design](../images/DesignTeam112.png) 
 
 During the meeting, we went over individual UML class diagrams. Then we chose one design that everyone liked the most. Design 2 was chosen as the basis of team design. From that, everyone commented on things to improve. 
+
 Reason for Design 2: Design 2 had all of the classes identified and reflected most of the requirements. UI interface was also reflected which is a bonus. The relationships between entities are clearly laid out. 
+
 Improvements: There were couple of improvements from Design 2 that could be developed to the final team design. 
-- Consolidated <<Play a Word Game UI>>, <<View Statistics UI>>, <<Adjust the Game Settings UI>> and placed it under <<Main UI>> to clean up the look of the diagram.
+- Consolidated <Play a Word Game UI>, <View Statistics UI>, <Adjust the Game Settings UI> and placed it under <Main UI> to clean up the look of the diagram.
 - Created association between class WordGame and Statistics so that Statistics is globally available to class WordGame. 
 
 ## Summary

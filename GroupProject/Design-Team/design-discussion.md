@@ -3,6 +3,7 @@
 ## Design 1 [Roger Kiew]
 ![Design 1](../images/Design1.png)
 ### Pros
+SJ: The cleanest looking UML from our team.
 ### Cons
 SJ: The class diagram is broad and does not address a lot of the detail in the requirements. More details would have helped for enterWord(), statistics, and initializeBoard. Probably need statistics class to be added.
 

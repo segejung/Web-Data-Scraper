@@ -1,6 +1,6 @@
 # Design Discussion
 
-## Design 1 
+## Design 1 [Brian Hoang]
 ![Design 1](../images/Design1.png)
 ### Pros
 ### Cons
@@ -10,7 +10,7 @@
 ### Pros
 ### Cons
 
-## Design 3
+## Design 3 
 ![Design 3](../images/Design3.png) 
 ### Pros
 ### Cons

@@ -10,9 +10,10 @@ SJ: The class diagram is broad and does not address a lot of the requirement det
 ## Design 2 [SeGe Jung]
 ![Design 2](../images/Design2.png)
 ### Pros
+RK: Well structured, listed both UI and the classes
 ### Cons
 SJ: UI could be consolidated into one Main UI. 
-
+RK: No global access to each game's score/settings etc.
 ## Design 3 [Brian Hoang]
 ![Design 3](../images/Design3.png) 
 ### Pros

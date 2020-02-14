@@ -18,10 +18,11 @@ RK: No global access to each game's score/settings etc.
 ![Design 3](../images/Design3.png) 
 ### Pros
 SJ: Concise and structured view of the classes. Address all of the functions of the wordgame application.
-
+RK: The classes contained all necessary fields/methods.
+  
 ### Cons
 SJ: Details lack a bit and could use couple more classes. It would be worth articulating the enterWord() method as it is listed as one of the requirements. For example, I added some boolean to see if the word is a certain length. There is no information on what the board will consist of. Vowels, weights, letter ‘Qu’, or the size. Would like to see some more classes articulating this work. Aggregation of board can be classes letters and word.
-
+RK: The classes are interconnected so the structure is not as clear.
 ## Design 4 [Mo Yang]
 ![Design 4](../images/Design4.png) 
 ### Pros

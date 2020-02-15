@@ -7,7 +7,7 @@ The cleanest looking UML from our team. It has a global variable that scores and
 
 Not overly complex and is easy to understand.
 
-Roger's Design has less UML classes as he consolidated a lot of attributes and features. In this way, he made the UML much clean for other people to understand the structure.
+The design has less UML classes as he consolidated a lot of attributes and features. In this way, he made the UML much clean for other people to understand the structure.
 
 ### Cons
 The class diagram is broad and does not address a lot of the requirement details. The diagram could help with more detail on enterWord(), statistics, and initializeBoard. 
@@ -31,7 +31,7 @@ No global access to each game's score/settings etc.
 
 Could remove simple methods such as subtractFivePoints and simply subtract five points from the score during a reroll. 
 
-under UI section, there were four classes. Three sub classes can all be included under the main UI so that the overall class structure is clearer and less confusing.
+Under UI section, there were four classes. Three sub classes can all be included under the main UI so that the overall class structure is clearer and less confusing.
 
 ## Design 3 [Brian Hoang]
 ![Design 3](../images/Design3.png) 
@@ -40,14 +40,14 @@ Concise and structured view of the classes. Address all of the functions of the 
 
 The classes contained all necessary fields/methods.
 
-Brian's design has clear structure while maintaing good amount of details. The method explanation near each relationship clearly states how different classes interact with each other.
+The design has clear structure while maintaing good amount of details. The method explanation near each relationship clearly states how different classes interact with each other.
   
 ### Cons
 It would be worth articulating the enterWord() method as it is listed as one of the requirements. What constitutes a word? There is no information on what the board will consist of. Vowels, weights, letter ‘Qu’, or the size. Would like to see some more classes articulating this work. Aggregation of board can be classes letters and word.
 
 The classes are interconnected so the structure is not as clear.
 
-the right hand side of the design has similar unclear relationship/interaction among Statistics, GameScoreStatistics, and WordStatistics.
+The right hand side of the design has similar unclear relationship/interaction among Statistics, GameScoreStatistics, and WordStatistics.
 
 ## Design 4 [Mo Yang]
 ![Design 4](../images/Design4.png) 

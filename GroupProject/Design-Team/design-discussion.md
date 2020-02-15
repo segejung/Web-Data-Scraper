@@ -22,7 +22,7 @@ The game statistics can be made a separate class as it has more features and mor
 Well structured, listed both UI and the classes
 
 Most detailed and did a good job of meeting the requirements. 
-Compared to RK's design, SJ's design has a better overall structure. More classes were considered to show the relationship and interacction.
+Compared to design 1, this design has a better overall structure. More classes were considered to show the relationship and interacction.
 
 ### Cons
 UI could be consolidated into one Main UI. 

@@ -6,7 +6,7 @@
 
 ## 1 Introduction
 
-*Here you introduce the product. Keep this  clean and simple, one or two sentences at most.*
+A simple word game that may be used by a single player in which the player will score points from creating words from a board of randomly generated letters. 
 
 ## 2 Process Description
 
@@ -24,3 +24,19 @@
 - *Team members' names*
 - *Roles, with a short description of each role*
 - *Table showing which team member(s) has which role(s)*
+
+### Team Members:
+- Sege Jung
+- Roger Kiew
+- Brian Hoang
+- Mo Yang
+
+### Roles:
+- Project Manager - Person in charge of submitting the final commit ID
+
+| Team Member | Role(s) |
+|-------------|---------|
+| Sege Jung   |         |
+| Roger Kiew  | Project Manager |
+| Brian Hoang |         |
+| Mo Yang     |         |

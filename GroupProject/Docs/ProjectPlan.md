@@ -19,12 +19,6 @@ A simple word game that may be used by a single player in which the player will 
 
 ## 3 Team
 
-*Describe the team and their roles (include at least 4 roles, there may be more roles than there are team members)*
-
-- *Team members' names*
-- *Roles, with a short description of each role*
-- *Table showing which team member(s) has which role(s)*
-
 ### Team Members:
 - Sege Jung
 - Roger Kiew
@@ -32,11 +26,14 @@ A simple word game that may be used by a single player in which the player will 
 - Mo Yang
 
 ### Roles:
-- Project Manager - Person in charge of submitting the final commit ID
+- Project Manager - Person in charge of submitting the final commit ID.
+- UI Designer: Person in charge of writing design document (DesignDocument.md) and implementing UI
+- Developer : Person in charge of writing Use case model (UseCaseModel.md) and implementing core functionalities.
+- QA: Person in charge of writing test plan (TestPlan.md) and implementing tests
 
 | Team Member | Role(s) |
 |-------------|---------|
-| Sege Jung   |         |
-| Roger Kiew  | Project Manager |
-| Brian Hoang |         |
-| Mo Yang     |         |
+| Sege Jung   | UI Designer |
+| Roger Kiew  | Project Manager / Developer |
+| Brian Hoang | Developer |
+| Mo Yang     | QA |

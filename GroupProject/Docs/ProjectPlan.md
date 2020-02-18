@@ -36,7 +36,7 @@ A simple word game that may be used by a single player in which the player will 
 
 | Team Member | Role(s) |
 |-------------|---------|
-| Sege Jung   |         |
+| Sege Jung   |     UI    |
 | Roger Kiew  | Project Manager |
 | Brian Hoang |         |
 | Mo Yang     |         |

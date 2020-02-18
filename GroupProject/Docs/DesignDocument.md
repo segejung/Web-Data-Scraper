@@ -1,16 +1,18 @@
 # Design Document
 
-*This is the template for your design document. The parts in italics are concise explanations of what should go in the corresponding sections and should not appear n the final document.*
+<*This is the template for your design document. The parts in italics are concise explanations of what should go in the corresponding sections and should not appear n the final document.*>
 
 **Author**: Team112
 
 ## 1 Design Considerations
 
 *The subsections below describe the issues that need to be addressed or resolved prior to or while completing the design, as well as issues that may influence the design process.*
+Most of the software requirements have been discussed and clarified with the use case model. 
 
 ### 1.1 Assumptions
 
 *Describe any assumption, background, or dependencies of the software, its use, the operational environment, or significant project issues.*
+
 
 ### 1.2 Constraints
 
@@ -40,9 +42,8 @@
 
 ![Team Design](../images/TeamDesign.png) 
 
-### 3.2 Other Diagrams
-
-*<u>Optionally</u>, you can decide to describe some dynamic aspects of your system using one or more behavioral diagrams, such as sequence and state diagrams.*
-
 ## 4 User Interface Design
 *For GUI-based systems, this section should provide the specific format/layout of the user interface of the system (e.g., in the form of graphical mockups).*
+
+### Main UI
+

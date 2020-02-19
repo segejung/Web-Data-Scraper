@@ -20,22 +20,19 @@ Another constraint is that the phone size has to be smaller than 6 inches diagno
 
 ### 1.3 System Environment
 
-*Describe the hardware and software that the system must operate in and interact with.*
 The hardware has to be a smartphone device that has a screen 6 inches or less. The hardware must have a keyboard so that the user may enter words. 
+The software has operating Android KitKat or above. Anything older than this operating version will not be compatible.
 
-### 1.4 Compatibility
-The software is able to operate with multiple android devices that offer Kitkat or above software.
-
-### 1.5 Extensibility
+### 1.4 Extensibility
 New capabilities and features can be added to the architecture without major modifications. The main architecture is set and new features will be adding new classes. 
 
-### 1.6 Modularity
+### 1.5 Modularity
 The software allows for testing in isolation before integrating to the entire system.
 
-### 1.7 Performance
+### 1.6 Performance
 The software does not take too much memory when operating. It provides smooth experience. 
 
-### 1.8 Usability
+### 1.7 Usability
 The software is usable for the users. The user interface is intuitive, simple, and avoid extraneous information. 
 
 ## 2 Architectural Design

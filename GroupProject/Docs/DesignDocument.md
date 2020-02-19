@@ -56,6 +56,22 @@ The software is usable for the users. The user interface is intuitive, simple, a
 ![Team Design](../images/TeamDesign.png) 
 
 ## 4 User Interface Design
-*For GUI-based systems, this section should provide the specific format/layout of the user interface of the system (e.g., in the form of graphical mockups).*
+
 ![GUI](../images/GUIMockup.png) 
+
+The graphic user interface has four main interfaces- Main UI, Settings UI, Play UI, and Statistics UI. 
+
+### 4.1 Main UI
+Main UI is the front page of the application. This interface is what the users will view as soon as they open the game. The main UI has three buttons. It has play the game, statistics, and settings. Also on the button, there is a help button that has a tutorial text. All interfaces except the Main UI has a back button to allow users to return to main menu. 
+
+### 4.2 Settings UI
+Settings UI allows the user adjust various settings of the games. The game minutes allow the users to select the length of the game ranging from 0 to 5 minutes. Default is 3 minutes. 
+Board size is adjusting the board size from 4 to 8. Default is 4. 
+Weight of letters allows users to assign weights to each letters. Weights range from 1 to 5. 
+
+### 4.3 Play Game UI
+Play game UI is where the users can play the word game. A board size is shown and the letters are randomly generated. The point counter is on the very top of the screen. Down below, there is a timer. There is a reroll button that regenerates the board and takes off 5 points. The keyboard is automatically open and users may begin to type in words. Once they press enter, the application will recognize as an entry. 
+
+### 4.4 Statistics UI
+Statistics UI has game score statistics and word statistics. Both statistics are populated in one screen. By the game number, there is a clickable button that users can click to view settings. Users can also sort columns. 
 

@@ -4,8 +4,6 @@
 
 ## 1 Design Considerations
 
-*The subsections below describe the issues that need to be addressed or resolved prior to or while completing the design, as well as issues that may influence the design process.*
-
 Most of the software requirements have been discussed and clarified with the use case model. 
 
 ### 1.1 Assumptions
@@ -48,8 +46,6 @@ The software is usable for the users. The user interface is intuitive, simple, a
 *This section should describe how the different components will be deployed on actual hardware devices. Similar to the previous subsection, this diagram may be unnecessary for simple systems; in these cases, simply state so and concisely state why.*
 
 ## 3 Low-Level Design
-
-*Describe the low-level design for each of the system components identified in the previous section. For each component, you should provide details in the following UML diagrams to show its internal structure.*
 
 ### 3.1 Class Diagram
 

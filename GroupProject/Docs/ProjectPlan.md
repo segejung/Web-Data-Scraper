@@ -35,8 +35,8 @@ A simple word game that may be used by a single player in which the player will 
 - Project Manager - Person in charge of submitting the final commit ID
 
 | Team Member | Role(s) |
-|-------------|---------|
+|-------------|:---------:|
 | Sege Jung   |     UI    |
 | Roger Kiew  | Project Manager |
 | Brian Hoang |         |
-| Mo Yang     |         |
+| Mo Yang     |  test       |

@@ -1,26 +1,42 @@
 # Design Document
 
-<*This is the template for your design document. The parts in italics are concise explanations of what should go in the corresponding sections and should not appear n the final document.*>
-
 **Author**: Team112
 
 ## 1 Design Considerations
 
 *The subsections below describe the issues that need to be addressed or resolved prior to or while completing the design, as well as issues that may influence the design process.*
+
 Most of the software requirements have been discussed and clarified with the use case model. 
 
 ### 1.1 Assumptions
 
-*Describe any assumption, background, or dependencies of the software, its use, the operational environment, or significant project issues.*
-
+The assumption is that the game software will be a standalone architecture that does not need to be tied into other architectures such as widgets, settings, and phone notification. Also, the game application will be for one user with a single device. It does not have multiplayer capability. 
+Another assumption of the requirement is that no sound or haptic feedback is necessary for the game application.
 
 ### 1.2 Constraints
 
-*Describe any constraints on the system that have a significant impact on the design of the system.*
+A constraint is that the phone orientation has to be in portrait mode. All the interfaces are locked in this orientation. The intent is so that the game can be played one handed operation. 
+Another constraint is that the phone size has to be smaller than 6 inches diagnolly. 
 
 ### 1.3 System Environment
 
 *Describe the hardware and software that the system must operate in and interact with.*
+The hardware has to be a smartphone device that has a screen 6 inches or less. The hardware must have a keyboard so that the user may enter words. 
+
+### 1.4 Compatibility
+The software is able to operate with multiple android devices that offer Kitkat or above software.
+
+### 1.5 Extensibility
+New capabilities and features can be added to the architecture without major modifications. The main architecture is set and new features will be adding new classes. 
+
+### 1.6 Modularity
+The software allows for testing in isolation before integrating to the entire system.
+
+### 1.7 Performance
+The software does not take too much memory when operating. It provides smooth experience. 
+
+### 1.8 Usability
+The software is usable for the users. The user interface is intuitive, simple, and avoid extraneous information. 
 
 ## 2 Architectural Design
 

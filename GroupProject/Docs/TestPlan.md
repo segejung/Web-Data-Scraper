@@ -1,31 +1,67 @@
 # Test Plan
 
-*This is the template for your test plan. The parts in italics are concise explanations of what should go in the corresponding sections and should not appear in the final document.*
-
 **Author**: Team112
+**Version**: 1.0
+**Date**: Feb 28 2020
 
 ## 1 Testing Strategy
 
 ### 1.1 Overall strategy
 
-*This section should provide details about your unit-, integration-, system-, and regression-testing strategies. In particular, it should discuss which activities you will perform as part of your testing process, and who will perform such activities.*
+*We will use the tools and knowledge we learned from the past modules from this class to help test our software. We will break down the entire test process into the following parts
+
+1. Unit Testing - we will develope corner cases, boundary conditions, and error cases to test out our codes.
+2. Integration Testing - we will focus on the functionality test of a group of components together
+3. Regression Testing - build up the framework for automated test scripts so that we test against expected outputs for each build. we will also track the error vs. each build record to catch any potential bugs.
+4. System Testing  - this evaluates the software system as a complete system. we will consider things like system performance, system limits, error handling, and legitimate usage.
+
+*We will probably utilize the JUnit and Espresso to help build our automation testing scripts.
+
 
 ### 1.2 Test Selection
 
-*Here you should discuss how you are going to select your test cases, that is, which black-box and/or white-box techniques you will use. If you plan to use different techniques at different testing levels (e.g., unit and system), you should clarify that.*
+*We will start from our use case models to derive common test cases/values to test each unit and integration. Then we will further include corner cases, boundary conditions, and error handling scenarios based on our software design and process flow
 
 ### 1.3 Adequacy Criterion
 
-*Define how you are going to assess the quality of your test cases. Typically, this involves some form of functional or structural coverage. If you plan to use different techniques at different testing levels (e.g., unit and system), you should clarify that.*
+*Adequacy Criterion consists of,
+1. if the software takes in the user input correctly.
+2. if the software outputs correct/expected results based on the requirements/specs
+3. if the complete software has the meaningful and functional User Interface.
 
 ### 1.4 Bug Tracking
 
-*Describe how bugs and enhancement requests will be tracked.*
+*We will use JIRA system to help us track the bugs during our software development. In order to do that, we create a JIRA ticket to report the bug whenever we encounter it during development/during testing. The information will include,
+
+i. bug definition
+ii. bug description
+iii. software build version and dependency
+iv. other details - like screen capture, possible root causes, steps to show the bug, etc.
 
 ### 1.5 Technology
 
-*Describe any testing technology you intend to use or build (e.g., JUnit, Selenium).*
+*As mentioned earlier, JUnit and Espresso will be used to as the technology for our software testing. We will leverage the things we learned and the codes we developed from our assigment 4 to help build our test process flow.
 
 ## 2 Test Cases
 
-*This section should be the core of this document. You should provide a table of test cases, one per row. For each test case, the table should provide its purpose, the steps necessary to perform the test, the expected result, the actual result (to be filled later), pass/fail information (to be filled later), and any additional information you think is relevant.*
+| Test#   |      Test Name      |  Detailed Steps |  Correct/Expected Values |PASS/FAIL|
+|:--:|:-------------:|------|------|:-------------:|
+| 1 |  test game setting | input various game settings into the software, 5x size, 5x weight, 3x minutes |the generated game should match the input values, UI updated | TBD|
+| 2 |    view statistics - word   |   first run through different games. then enable statistics view button | the output result should match the currect saved word, UI updated. The number of times the word has been played, across all games| TBD|
+| 3 | view statistics - game |    first run through different games. then enable statistics view button | the UI will show the list of scores, in descending order by final game score. The values have to match | TBD|
+|4| play game| click on play game | board generated and UI updated| TBD|
+|5| enter word and validate word| user to enter a input as the word for the game | the attribute gets updated and UI is also updated. The score should be updated as well| TBD|
+|6| lag test | pick any other 5 tests and record the time spent | process time < 2secs to qualify as PASS| TBD|
+|7| re-roll test| user to click on re-roll button | a new board should be initialized, UI updated and score goes down by 5 points| TBD|
+|8| exit game| user to click on exit button| the attributes all get updated. UI updated to display the final score| TBD|
+|9|Test Qu | Game to include Qu cases| it should be counted as 1 letter| TBD|
+|10| vowels and consonants| user to play multiple games. Check each game board's vowels and consonants| ⅕ (rounded up) of the letters will be vowels (a,e,i,o,u). ⅘ will be consonants| TBD|
+
+
+
+
+
+
+
+
+

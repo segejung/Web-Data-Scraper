@@ -3,6 +3,8 @@
 *This is the template for your project plan. The parts in italics are concise explanations of what should go in the corresponding sections and should not appear in the final document.*
 
 **Author**: Team112
+**Version**: 1.0
+**Date**: Feb 28 2020
 
 ## 1 Introduction
 

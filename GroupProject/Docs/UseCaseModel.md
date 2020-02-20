@@ -29,7 +29,7 @@
             - List of number of times the board was reset displays.
             - List of the number of words entered in the game displays.
             - User selects game score from the list and views the settings for that game's board size, number of minutes, and the highest scoring word played in the game. 
-        - User views word statistics.
+        - Player views word statistics.
             - List of words displays.  
             - Number of times words have been used displays. 
    

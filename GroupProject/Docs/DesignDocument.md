@@ -1,6 +1,8 @@
 # Design Document
 
 **Author**: Team112
+**Version**: 1.0
+**Date**: Feb 28 2020
 
 ## 1 Design Considerations
 

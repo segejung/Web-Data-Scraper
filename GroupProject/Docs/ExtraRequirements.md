@@ -1,6 +1,10 @@
 # Extra Requirements
 
-For future enhancement:
+1. The user is able to exit/close the app.
+
+
+
+For future enhancement, some bonus features:
 
 1. User can create an account
 2. User can use third-party authentication to create an account, such as Google/Facebook account.

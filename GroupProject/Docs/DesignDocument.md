@@ -37,8 +37,6 @@ The software is usable for the users. The user interface is intuitive, simple, a
 
 ## 2 Architectural Design
 
-*The architecture provides the high-level design view of a system and provides a basis for more detailed design work. These subsections describe the top-level components of the system you are building and their relationships.*
-
 ### 2.1 Component Diagram
 
 *This section should provide and describe a diagram that shows the various components and how they are connected. This diagram shows the logical/functional components of the system, where each component represents a cluster of related functionality. In the case of simple systems, where there is a single component, this diagram may be unnecessary; in these cases, simply state so and concisely state why.*

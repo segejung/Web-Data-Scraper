@@ -2,7 +2,7 @@
 
 **Author**: Team112
 **Version**: 1.0
-**Date**: Feb 28 2020
+**Date**: Feb 20 2020
 
 ## 1 Design Considerations
 
@@ -43,6 +43,7 @@ The software is usable for the users. The user interface is intuitive, simple, a
 
 ### 2.2 Deployment Diagram
 
+![Deployment Diagram](../images/DeploymentDiagram.png) 
 *This section should describe how the different components will be deployed on actual hardware devices. Similar to the previous subsection, this diagram may be unnecessary for simple systems; in these cases, simply state so and concisely state why.*
 
 ## 3 Low-Level Design

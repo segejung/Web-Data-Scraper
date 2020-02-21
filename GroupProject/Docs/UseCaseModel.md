@@ -1,6 +1,8 @@
 # Use Case Model
 
 **Author**: Team112
+**Version**: 1.0
+**Date**: Feb 28 2020
 
 ## 1 Use Case Diagram
 
@@ -27,7 +29,7 @@
             - List of number of times the board was reset displays.
             - List of the number of words entered in the game displays.
             - User selects game score from the list and views the settings for that game's board size, number of minutes, and the highest scoring word played in the game. 
-        - User views word statistics.
+        - Player views word statistics.
             - List of words displays.  
             - Number of times words have been used displays. 
    
@@ -40,7 +42,7 @@
             -  word must be validated 
             -  if word is valid, add points to score 
             -  if word is invalid, no points added to score and error message displayed 
-        - If player re-rolls board, the letters become randomized 
+        - If player re-rolls board, the letters become randomized and 5 points are subtracted from the score
         - If player exits game or time runs out
             - Score is displayed
             - Player is returned back to main menu 

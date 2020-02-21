@@ -1,7 +1,8 @@
 # Extra Requirements
 
 1. The user is able to exit/close the app.
-
+2. The user interface must be intuitive and responsive.
+3. The performance of the game should be such that students do not experience any considerable lag between their actions and the response of the application.
 
 
 For future enhancement, some bonus features:

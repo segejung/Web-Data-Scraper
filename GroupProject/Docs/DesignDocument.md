@@ -39,12 +39,12 @@ The software is usable for the users. The user interface is intuitive, simple, a
 
 ### 2.1 Component Diagram
 
-*This section should provide and describe a diagram that shows the various components and how they are connected. This diagram shows the logical/functional components of the system, where each component represents a cluster of related functionality. In the case of simple systems, where there is a single component, this diagram may be unnecessary; in these cases, simply state so and concisely state why.*
+The component diagram is less relevant in the case where the project only has a single component - mobile device.
 
 ### 2.2 Deployment Diagram
 
 ![Deployment Diagram](../images/DeploymentDiagram.png) 
-*This section should describe how the different components will be deployed on actual hardware devices. Similar to the previous subsection, this diagram may be unnecessary for simple systems; in these cases, simply state so and concisely state why.*
+Although a deployment diagram may not be necessary for a simple system, the diagram provides an overview of components of the system. 
 
 ## 3 Low-Level Design
 

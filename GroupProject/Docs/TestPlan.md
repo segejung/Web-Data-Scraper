@@ -2,7 +2,10 @@
 
 **Author**: Team112
 **Version**: 1.0
-**Date**: Feb 28 2020
+**Date**: Feb 18 2020
+
+**Version**: 1.1
+**Date**: Feb 21 2020
 
 ## 1 Testing Strategy
 
@@ -56,6 +59,7 @@ iv. other details - like screen capture, possible root causes, steps to show the
 |8| exit game| user to click on exit button| the attributes all get updated. UI updated to display the final score| TBD|
 |9|Test Qu | Game to include Qu cases| it should be counted as 1 letter| TBD|
 |10| vowels and consonants| user to play multiple games. Check each game board's vowels and consonants| ⅕ (rounded up) of the letters will be vowels (a,e,i,o,u). ⅘ will be consonants| TBD|
+|11| validate word in more details| user to enter ten different words. Check if the words meet all the requirements. | Then check if the software updates to the right score or error msg| TBD|
 
 
 

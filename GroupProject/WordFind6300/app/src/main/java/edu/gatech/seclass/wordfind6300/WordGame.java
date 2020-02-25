@@ -71,7 +71,7 @@ public class WordGame extends AppCompatActivity {
 
     public void generateRandom(){
         list = new ArrayList<>();
-        // A dummy map to simulate a weighter map for now ------------------
+        // A dummy map to simulate a weight map for now ------------------
         Map<Character, Integer> dummyMap = new HashMap();
         dummyMap.put('A', 1);
         dummyMap.put('B', 1);
@@ -124,7 +124,6 @@ public class WordGame extends AppCompatActivity {
         // Take vowels string as example, it will ended up being "AAAEIOU" if A is weighted as 3.
         // Same as the consonants string.
         // When getting a random char from the string, the value is weighted.
-
 
 
         // Set the consonantCount to 80% of the board size and vowelCount to 20% of the board size

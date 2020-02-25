@@ -21,6 +21,9 @@ public class MainActivity extends AppCompatActivity {
 
         Button playButton = findViewById(R.id.playButton);
         Button settingsButton = findViewById(R.id.settingsButton);
+
+        // If play button clicked then navigate to Word Game UI and pass in
+        // data from settings
         playButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -31,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        // If settings clicked then navigate to Settings UI and retrieve data from settings
         settingsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -41,10 +45,12 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    // This method is called when retrieving data from a child UI (such as Settings UI)
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent dataIntent) {
         super.onActivityResult(requestCode, resultCode, dataIntent);
         switch (requestCode) {
+            // if result is from settings set the data for number of minutes and board size
             case REQUEST_CODE_SETTINGS:
                 if (resultCode == RESULT_OK) {
                     numberOfMinutes = dataIntent.getIntExtra("minutes", 3);

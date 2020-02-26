@@ -15,20 +15,10 @@ public class MainActivity extends AppCompatActivity {
     private int boardSize = 4;
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-
-
-
-
-
-
-
-
 
         Button playButton = findViewById(R.id.playButton);
         Button settingsButton = findViewById(R.id.settingsButton);

@@ -16,8 +16,15 @@ public class Statistics extends AppCompatActivity {
             TextView tv = (TextView) findViewById(R.id.textView5);
             //TEST: the following is for test!!!!!
             String text = getIntent().getExtras().getString("edu.gatech.seclass.gameapp.SOMETHING");
+            StatObject so = this.readFile();
+
+            tv.setText(text);
+            text = so.highestWordsList.get(so.highestWordsList.size() - 1);
             tv.setText(text);
 
         }
+    }
+    private StatObject readFile(){
+        return ((StatObject)this.getApplication()).readFile();
     }
 }

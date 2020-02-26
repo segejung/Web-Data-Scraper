@@ -8,6 +8,7 @@ import android.view.View;
 import android.content.Intent;
 import android.view.MenuItem;
 
+import android.widget.Button;
 import android.widget.Spinner;
 
 
@@ -15,7 +16,7 @@ import android.os.Bundle;
 
 public class Settings extends AppCompatActivity {
     Spinner gameMinutesSpinner, boardSizeSpinner;
-
+    Button saveBtn;
     // presets for minutes and board sizes
     String[] minutes = new String[] {"1", "2", "3", "4", "5"};
     String[] sizes = new String[] {"4(x4)", "5(x5)", "6(x6)", "7(x7)", "8(x8)"};
@@ -44,6 +45,13 @@ public class Settings extends AppCompatActivity {
         sizesAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         boardSizeSpinner.setAdapter(sizesAdapter);
         boardSizeSpinner.setSelection(0);
+        saveBtn = findViewById(R.id.savebtn);
+        saveBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                writeFile();
+            }
+        });
 
         // When gameMinutesSpinner is clicked, set numberOfMinutes to the item selected
         gameMinutesSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -105,5 +113,7 @@ public class Settings extends AppCompatActivity {
 
         return(super.onOptionsItemSelected(item));
     }
-
+    private void writeFile(){
+        ((StatObject)this.getApplication()).writeFile();
+    }
 }

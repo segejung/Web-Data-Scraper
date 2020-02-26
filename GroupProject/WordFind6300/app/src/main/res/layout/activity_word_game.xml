@@ -10,80 +10,58 @@
         android:id="@+id/pointsText"
         android:layout_width="70dp"
         android:layout_height="40dp"
-        android:layout_marginStart="144dp"
-        android:layout_marginTop="45dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="15dp"
+        android:layout_marginStart="126dp"
+        android:layout_marginEnd="102dp"
         android:text="Points:"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        app:layout_constraintBottom_toTopOf="@+id/timerText"
-        app:layout_constraintEnd_toStartOf="@+id/pointsValue"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/button"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.069" />
 
     <TextView
-        android:id="@+id/pointsValue"
+        android:id="@+id/scoreText"
         android:layout_width="25dp"
         android:layout_height="40dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="38dp"
-        android:layout_marginEnd="172dp"
-        android:layout_marginBottom="15dp"
         android:text="0"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        app:layout_constraintBottom_toTopOf="@+id/timerText"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/pointsText"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintHorizontal_bias="0.601"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.069" />
 
     <TextView
         android:id="@+id/timerText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:layout_marginBottom="15dp"
         android:text="3:00"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        app:layout_constraintBottom_toTopOf="@+id/wordInput"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/pointsText"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/pointsText" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.068" />
 
     <Button
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="45dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="52dp"
+        android:layout_marginTop="40dp"
         android:text="Reroll"
-        app:layout_constraintBottom_toTopOf="@+id/wordInput"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.791"
-        app:layout_constraintStart_toEndOf="@+id/pointsValue"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:id="@+id/wordInput"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:layout_marginBottom="26dp"
-        android:hint="Start Entering Word!"
-        android:inputType="text"
-        app:layout_constraintBottom_toTopOf="@+id/boardGrid"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintHorizontal_bias="0.879"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/timerText"
-        app:layout_constraintVertical_bias="0.12"></EditText>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <GridView
         android:id="@+id/boardGrid"
         android:layout_width="328dp"
         android:layout_height="380dp"
-        android:layout_marginTop="19dp"
-        android:layout_marginBottom="145dp"
         android:columnWidth="80dp"
         android:gravity="center"
         android:numColumns="auto_fit"
@@ -92,6 +70,42 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/wordInput" />
+        app:layout_constraintTop_toBottomOf="@+id/wordInput"
+        app:layout_constraintVertical_bias="0.672" />
+
+    <Button
+        android:id="@+id/enterBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Enter"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.201"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.925" />
+
+    <Button
+        android:id="@+id/cancelBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@android:string/cancel"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.755"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.925" />
+
+    <TextView
+        android:id="@+id/wordInput"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Start Entering characters"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.214" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -3,15 +3,18 @@ package edu.gatech.seclass.wordfind6300;
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Map;
 import java.util.Random;
 import java.util.Collections;
+import java.util.Set;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.GridView;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
@@ -23,10 +26,14 @@ public class WordGame extends AppCompatActivity {
     GridView board;
 
     int numberOfMinutes, boardSize, lettersCount;
+    Button enterBtn, cancelBtn;
+    TextView wordInput;
+    TextView scoreText;
 
     public int finalScore = 0;
 
     List<String> list;
+    Set<String> wordSet;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,8 +69,34 @@ public class WordGame extends AppCompatActivity {
         board.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View v,
                                     int position, long id) {
-                Toast.makeText(getApplicationContext(),
-                        ((TextView) v).getText(), Toast.LENGTH_SHORT).show();
+                String originalText = String.valueOf(wordInput.getText());
+                wordInput.setText(originalText + ((TextView) v).getText());
+            }
+        });
+
+        enterBtn = findViewById(R.id.enterBtn);
+        cancelBtn = findViewById(R.id.cancelBtn);
+        wordInput = findViewById(R.id.wordInput);
+        scoreText = findViewById(R.id.scoreText);
+        wordSet = new HashSet();
+        enterBtn.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                String word = String.valueOf(wordInput.getText());
+                if(wordSet.add(word)){
+                    finalScore += 5;
+                    scoreText.setText(String.valueOf(finalScore));
+                    wordInput.setText("");
+
+                } else{
+                    Toast.makeText(getApplicationContext(), "The word is used in this game!", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+        cancelBtn.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                wordInput.setText("");
             }
         });
 

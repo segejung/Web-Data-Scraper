@@ -111,8 +111,6 @@ public class WordGame extends AppCompatActivity {
         dummyMap.put('C', 1);
         dummyMap.put('D', 1);
         dummyMap.put('E', 1);
-        dummyMap.put('D', 1);
-        dummyMap.put('E', 1);
         dummyMap.put('F', 1);
         dummyMap.put('G', 1);
         dummyMap.put('H', 1);

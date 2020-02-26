@@ -14,13 +14,25 @@ public class MainActivity extends AppCompatActivity {
     private int numberOfMinutes = 3;
     private int boardSize = 4;
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
+
+
+
+
+
+
+
+
         Button playButton = findViewById(R.id.playButton);
         Button settingsButton = findViewById(R.id.settingsButton);
+        Button view_statistics = (Button)findViewById(R.id.statisticsButton);
 
         // If play button clicked then navigate to Word Game UI and pass in
         // data from settings
@@ -42,6 +54,17 @@ public class MainActivity extends AppCompatActivity {
                 startActivityForResult(intent, REQUEST_CODE_SETTINGS);
             }
         });
+
+        //If Statistics clicked then navigate to Statistics UI and show the stats results
+        view_statistics.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v){
+                Intent startIntent = new Intent(getApplicationContext(), Statistics.class);
+                //TEST: the following is for test!!!!!
+                startIntent.putExtra("edu.gatech.seclass.gameapp.SOMETHING", "2HELLO WORLD!!!!" );
+                startActivity(startIntent);
+            }
+        } );
 
     }
 

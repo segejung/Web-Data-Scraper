@@ -15,6 +15,9 @@
         <activity android:name=".Settings"
             android:parentActivityName=".MainActivity">
         </activity>
+        <activity android:name=".Statistics"
+            android:parentActivityName=".MainActivity">
+        </activity>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

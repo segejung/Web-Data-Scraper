@@ -12,7 +12,7 @@
     + [3.3 Board Size](#board-size)
 * [4 Game Statistics](#game-statistics)
     + [4.1 Word Statistics](#word-statistics)
-    + [4.2 Game Statistics](#4.2 game-statistics)
+    + [4.2 Game Statistics](#game-statistics)
 
 ## 1. Overview
 The WordGame application is a game that users can enter words using letters from a randomized board and score. 

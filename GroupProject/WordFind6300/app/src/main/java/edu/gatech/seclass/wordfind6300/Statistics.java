@@ -23,8 +23,8 @@ public class Statistics extends AppCompatActivity {
 //            StatObject so = this.readFile();
 //
 //            tv.setText(text);
-//            System.out.print(so.highestWordsList);
-//            text = so.highestWordsList.get(so.highestWordsList.size() - 2);
+//            System.out.print(so.allWordsMap);
+//            text = so.allWordsMap.get(so.allWordsMap.size() - 2);
 //            tv.setText(text);
 
         }
@@ -80,11 +80,11 @@ public class Statistics extends AppCompatActivity {
         TextView secondWord = (TextView) findViewById(R.id.word2);
         TextView thirdWord = (TextView) findViewById(R.id.word3);
 
-        text = so.highestWordsList.get(so.highestWordsList.size() - 1).toString();
+        text = so.allWordsMap.get(so.allWordsMap.size() - 1).toString();
         firstWord.setText(text);
-        text = so.highestWordsList.get(so.highestWordsList.size() - 2).toString();
+        text = so.allWordsMap.get(so.allWordsMap.size() - 2).toString();
         secondWord.setText(text);
-        text = so.highestWordsList.get(so.highestWordsList.size() - 3).toString();
+        text = so.allWordsMap.get(so.allWordsMap.size() - 3).toString();
         thirdWord.setText(text);
 
         TextView firstWordStat = (TextView) findViewById(R.id.word10);

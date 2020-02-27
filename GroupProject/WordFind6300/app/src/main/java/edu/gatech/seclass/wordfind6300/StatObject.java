@@ -11,10 +11,8 @@ import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
 
 public class StatObject extends Application implements Serializable {
     List<Integer> finalScores;
@@ -23,7 +21,7 @@ public class StatObject extends Application implements Serializable {
     List<Integer> sizeList;
     List<Integer> minutesList;
     List<Map<Character, Integer>> letterWeights;
-    Map<String, Integer> highestWordsList;
+    Map<String, Integer> allWordsMap;
 
     int finalScore = 0;
     int resetCount = 0;
@@ -39,9 +37,9 @@ public class StatObject extends Application implements Serializable {
         wordCounts = new ArrayList();
         sizeList = new ArrayList();
         minutesList = new ArrayList();
-        highestWordsList = new HashSet();
         letterWeight = new HashMap();
         letterWeights = new ArrayList();
+        allWordsMap = new HashMap();
 
         letterWeight.put('B', 2);
         letterWeights.add(letterWeight);
@@ -52,7 +50,6 @@ public class StatObject extends Application implements Serializable {
         wordCount = 0;
         size = 5;
         minutes = 3;
-        highestWord = "cat";
         letterWeight.put('B', 5);
         letterWeights.add(letterWeight);
         saveAllToList();
@@ -62,7 +59,6 @@ public class StatObject extends Application implements Serializable {
         wordCount = 0;
         size = 6;
         minutes = 2;
-        highestWord = "apple";
         letterWeight.put('B', 3);
         letterWeights.add(letterWeight);
         saveAllToList();
@@ -72,7 +68,6 @@ public class StatObject extends Application implements Serializable {
         wordCount = 0;
         size = 7;
         minutes = 1;
-        highestWord = "banana";
         letterWeight.put('B', 4);
         letterWeights.add(letterWeight);
         saveAllToList();
@@ -82,7 +77,8 @@ public class StatObject extends Application implements Serializable {
         wordCount = 0;
         size = 4;
         minutes = 6;
-        highestWord = "dog";
+        letterWeight.put('B', 1);
+        letterWeights.add(letterWeight);
         saveAllToList();
 
     }
@@ -110,7 +106,6 @@ public class StatObject extends Application implements Serializable {
         wordCounts.add(wordCount);
         sizeList.add(size);
         minutesList.add(minutes);
-        highestWordsList.add(highestWord);
     }
 
     public void writeFile(){
@@ -142,7 +137,7 @@ public class StatObject extends Application implements Serializable {
 
             in.close();
             file.close();
-//            displayText.setText("the last value stored in the highestWordsList is \n" + stat.highestWordsList.get(stat.highestWordsList.size() - 1));
+//            displayText.setText("the last value stored in the allWordsMap is \n" + stat.allWordsMap.get(stat.allWordsMap.size() - 1));
         } catch(IOException ex){
             Toast.makeText(getApplicationContext(), "IOException is caught, returning a new object", Toast.LENGTH_SHORT).show();
             stat =  new StatObject();

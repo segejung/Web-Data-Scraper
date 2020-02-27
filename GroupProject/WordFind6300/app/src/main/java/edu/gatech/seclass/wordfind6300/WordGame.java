@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Map;
@@ -36,6 +37,9 @@ public class WordGame extends AppCompatActivity {
     List<Integer> positionsClicked;
     Set<String> wordSet;
 
+    StatObject so;
+    Button endGameBtn;
+    final String LETTERS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -103,9 +107,7 @@ public class WordGame extends AppCompatActivity {
             public void onClick(View view){
                 String word = String.valueOf(wordInput.getText());
 
-
-                if (word.length() == 1)
-                {
+                if (word.length() <= 1) {
                     Toast.makeText(getApplicationContext(), "The word must contain two or more letters!", Toast.LENGTH_SHORT).show();
                 }
                 else {
@@ -116,7 +118,7 @@ public class WordGame extends AppCompatActivity {
                         positionsClicked.clear();
 
                     } else {
-                        Toast.makeText(getApplicationContext(), "The word is used in this game!", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "The word has been used in this game!", Toast.LENGTH_SHORT).show();
                     }
                 }
             }
@@ -126,6 +128,14 @@ public class WordGame extends AppCompatActivity {
             public void onClick(View view){
                 wordInput.setText("");
                 positionsClicked.clear();
+            }
+        });
+        so = ((StatObject)this.getApplication());
+        endGameBtn = findViewById(R.id.endGameBtn);
+        endGameBtn.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                endGame();
             }
         });
 
@@ -139,7 +149,7 @@ public class WordGame extends AppCompatActivity {
         String consonants = "";
         String vowels = "";
 
-        for(Character c : dummyMap.keySet()){
+        for(Character c : LETTERS.toCharArray()){
             for (int i = 0; i < dummyMap.getOrDefault(c, 1); i++) {
                 String C = Character.toString(c);
                 if ("AEIOU".indexOf(C) >= 0) {
@@ -206,6 +216,18 @@ public class WordGame extends AppCompatActivity {
         wordInput.setText(originalText + ((TextView) v).getText());
         positionLastClicked = position;
         positionsClicked.add(position);
+    }
+    private void endGame(){
+        for(String word : wordSet){
+            int count = so.allWordsMap.getOrDefault(word, 0);
+            so.allWordsMap.put(word, count + 1);
+        }
+        Toast.makeText(getApplicationContext(), "Showing all words and the count in the allWordsMap", Toast.LENGTH_SHORT).show();
+        for( Map.Entry<String, Integer> entry : so.allWordsMap.entrySet()){
+            Toast.makeText(getApplicationContext(), entry.getKey() +" " + entry.getValue(), Toast.LENGTH_SHORT).show();
+        }
+        Toast.makeText(getApplicationContext(), "All entries displayed", Toast.LENGTH_SHORT).show();
+
     }
 }
 

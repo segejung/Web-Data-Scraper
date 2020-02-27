@@ -25,7 +25,7 @@ import android.view.WindowManager;
 public class WordGame extends AppCompatActivity {
     GridView board;
 
-    int numberOfMinutes, boardSize, lettersCount;
+    int numberOfMinutes, boardSize, lettersCount, positionLastClicked = 0;
     Button enterBtn, cancelBtn;
     TextView wordInput;
     TextView scoreText;
@@ -33,6 +33,7 @@ public class WordGame extends AppCompatActivity {
     public int finalScore = 0;
 
     List<String> list;
+    List<Integer> positionsClicked;
     Set<String> wordSet;
 
     @Override
@@ -66,11 +67,29 @@ public class WordGame extends AppCompatActivity {
 
         board.setAdapter(adapter);
 
+        positionsClicked = new ArrayList<>();
         board.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View v,
                                     int position, long id) {
-                String originalText = String.valueOf(wordInput.getText());
-                wordInput.setText(originalText + ((TextView) v).getText());
+
+                // If letters are already added need to check for constraints
+                if (!wordInput.getText().equals("")) {
+                    // Check if the position clicked on has already been selected
+                    if (positionsClicked.contains(position)) {
+                        Toast.makeText(getApplicationContext(), "Single letter on the board cannot be used twice!", Toast.LENGTH_SHORT).show();
+                    } else {
+                        // Check if the current selected position is adjacent to the previous
+                        if (isAdjacent(boardSize, position, positionLastClicked)) {
+                            addLetter(v, position);
+                        } else {
+                            Toast.makeText(getApplicationContext(), "The letters must be adjacent to each other!", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                }
+                else {
+                    // If no letters have been added add letter to wordInput
+                    addLetter(v, position);
+                }
             }
         });
 
@@ -85,13 +104,20 @@ public class WordGame extends AppCompatActivity {
                 String word = String.valueOf(wordInput.getText());
 
 
-                if(wordSet.add(word)){
-                    finalScore++;
-                    scoreText.setText(String.valueOf(finalScore));
-                    wordInput.setText("");
+                if (word.length() == 1)
+                {
+                    Toast.makeText(getApplicationContext(), "The word must contain two or more letters!", Toast.LENGTH_SHORT).show();
+                }
+                else {
+                    if (wordSet.add(word)) {
+                        finalScore += word.length();
+                        scoreText.setText(String.valueOf(finalScore));
+                        wordInput.setText("");
+                        positionsClicked.clear();
 
-                } else{
-                    Toast.makeText(getApplicationContext(), "The word is used in this game!", Toast.LENGTH_SHORT).show();
+                    } else {
+                        Toast.makeText(getApplicationContext(), "The word is used in this game!", Toast.LENGTH_SHORT).show();
+                    }
                 }
             }
         });
@@ -99,6 +125,7 @@ public class WordGame extends AppCompatActivity {
             @Override
             public void onClick(View view){
                 wordInput.setText("");
+                positionsClicked.clear();
             }
         });
 
@@ -183,4 +210,28 @@ public class WordGame extends AppCompatActivity {
         // Shuffle the list to randomize the board
         Collections.shuffle(list);
     }
+
+    // c = number of columns
+    // a = index of a
+    // b = index of b
+    // Check if elements are adjacent to each other in the board
+    public static boolean isAdjacent(int c, int a, int b) {
+        // columns and rows of a and b
+        int ax = a % c;
+        int ay = a / c;
+        int bx = b % c;
+        int by = b / c;
+
+        // Difference of row and column must be no more than 1
+        return a != b && Math.abs(ax - bx) <= 1 && Math.abs(ay - by) <= 1;
+    }
+
+    // Adds selected letter to wordInput
+    public void addLetter(View v, int position) {
+        String originalText = String.valueOf(wordInput.getText());
+        wordInput.setText(originalText + ((TextView) v).getText());
+        positionLastClicked = position;
+        positionsClicked.add(position);
+    }
 }
+

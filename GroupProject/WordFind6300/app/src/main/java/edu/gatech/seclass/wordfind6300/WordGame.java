@@ -108,38 +108,12 @@ public class WordGame extends AppCompatActivity {
         list = new ArrayList<>();
         // A dummy map to simulate a weight map for now ------------------
         Map<Character, Integer> dummyMap = new HashMap();
-        dummyMap.put('A', 1);
-        dummyMap.put('B', 1);
-        dummyMap.put('C', 1);
-        dummyMap.put('D', 1);
-        dummyMap.put('E', 1);
-        dummyMap.put('F', 1);
-        dummyMap.put('G', 1);
-        dummyMap.put('H', 1);
-        dummyMap.put('I', 1);
-        dummyMap.put('J', 1);
-        dummyMap.put('K', 1);
-        dummyMap.put('L', 1);
-        dummyMap.put('M', 1);
-        dummyMap.put('N', 1);
-        dummyMap.put('O', 1);
-        dummyMap.put('P', 1);
-        dummyMap.put('Q', 1);
-        dummyMap.put('R', 1);
-        dummyMap.put('S', 1);
-        dummyMap.put('T', 1);
-        dummyMap.put('U', 1);
-        dummyMap.put('V', 1);
-        dummyMap.put('W', 1);
-        dummyMap.put('X', 1);
-        dummyMap.put('Y', 1);
-        dummyMap.put('Z', 1);
 
         String consonants = "";
         String vowels = "";
 
         for(Character c : dummyMap.keySet()){
-            for (int i = 0; i < dummyMap.get(c); i++) {
+            for (int i = 0; i < dummyMap.getOrDefault(c, 1); i++) {
                 String C = Character.toString(c);
                 if ("AEIOU".indexOf(C) >= 0) {
                     vowels += C;

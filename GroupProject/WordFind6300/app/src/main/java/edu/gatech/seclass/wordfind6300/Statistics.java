@@ -18,7 +18,8 @@ public class Statistics extends AppCompatActivity {
             String text = getIntent().getExtras().getString("edu.gatech.seclass.gameapp.SOMETHING");
             StatObject so = this.readFile();
 
-            tv.setText(text);
+            text = String.valueOf(so.letterWeights.get(so.letterWeights.size() - 1).get('B'));
+            tv.setText("B's weight is "+ text);
 
         }
     }

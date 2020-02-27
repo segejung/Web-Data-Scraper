@@ -8,6 +8,7 @@ import android.view.View;
 import android.content.Intent;
 import android.view.MenuItem;
 
+import android.widget.Button;
 import android.widget.SeekBar;
 import android.widget.Spinner;
 
@@ -35,11 +36,17 @@ public class Settings extends AppCompatActivity {
 
     int numberOfMinutes = 3;
     int boardSize = 4;
+    StatObject so = null;
+    char letterToChange = 'A';
+
+
+    Button saveBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
+        so = ((StatObject)this.getApplication());
 
         gameMinutesSpinner = findViewById(R.id.gameMinutesSpinner);
         boardSizeSpinner = findViewById(R.id.boardSizeSpinner);
@@ -108,8 +115,8 @@ public class Settings extends AppCompatActivity {
 
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {
-                char c = LETTERS.charAt(progressChangedValue);
-                letterSelectorValueText.setText(String.valueOf(c));
+                letterToChange = LETTERS.charAt(progressChangedValue);
+                letterSelectorValueText.setText(String.valueOf(letterToChange));
             }
         });
 
@@ -129,6 +136,15 @@ public class Settings extends AppCompatActivity {
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {
                 weightSelectorValueText.setText(String.valueOf(progressChangedValue));
+                so.letterWeight.put(letterToChange, progressChangedValue);
+            }
+        });
+
+        saveBtn = findViewById(R.id.saveBtn);
+        saveBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                writeFile();
             }
         });
     }

@@ -10,8 +10,10 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 public class StatObject extends Application implements Serializable {
@@ -21,6 +23,7 @@ public class StatObject extends Application implements Serializable {
     List<Integer> sizeList;
     List<Integer> minutesList;
     Set<String> highestWordsList;
+    List<Map<Character, Integer>> letterWeights;
 
     int finalScore = 0;
     int resetCount = 0;
@@ -28,6 +31,8 @@ public class StatObject extends Application implements Serializable {
     int size = 4;
     int minutes = 3;
     String highestWord = "";
+    Map<Character, Integer> letterWeight;
+
     public StatObject(){
         finalScores = new ArrayList();
         resetCounts = new ArrayList();
@@ -35,6 +40,11 @@ public class StatObject extends Application implements Serializable {
         sizeList = new ArrayList();
         minutesList = new ArrayList();
         highestWordsList = new HashSet();
+        letterWeight = new HashMap();
+        letterWeights = new ArrayList();
+
+        letterWeight.put('B', 2);
+        letterWeights.add(letterWeight);
         saveAllToList();
 
         finalScore = 20;
@@ -42,6 +52,8 @@ public class StatObject extends Application implements Serializable {
         size = 5;
         minutes = 3;
         highestWord = "cat";
+        letterWeight.put('B', 5);
+        letterWeights.add(letterWeight);
         saveAllToList();
 
         finalScore = 40;
@@ -49,6 +61,8 @@ public class StatObject extends Application implements Serializable {
         size = 6;
         minutes = 2;
         highestWord = "apple";
+        letterWeight.put('B', 3);
+        letterWeights.add(letterWeight);
         saveAllToList();
 
         finalScore = 30;
@@ -56,6 +70,8 @@ public class StatObject extends Application implements Serializable {
         size = 7;
         minutes = 1;
         highestWord = "banana";
+        letterWeight.put('B', 4);
+        letterWeights.add(letterWeight);
         saveAllToList();
 
     }

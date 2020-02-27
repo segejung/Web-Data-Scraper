@@ -70,6 +70,7 @@ public class Settings extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
                 numberOfMinutes = Integer.parseInt(parentView.getItemAtPosition(position).toString());
+                so.minutes = numberOfMinutes;
             }
 
             @Override
@@ -86,6 +87,7 @@ public class Settings extends AppCompatActivity {
             public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
                 String boardSizeString = parentView.getItemAtPosition(position).toString();
                 boardSize = Character.getNumericValue(boardSizeString.charAt(0));
+                so.size = Integer.valueOf(boardSize);
             }
 
             @Override

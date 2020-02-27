@@ -38,6 +38,7 @@ public class StatObject extends Application implements Serializable {
 
         finalScore = 20;
         resetCount = 5;
+        wordCount = 0;
         size = 5;
         minutes = 3;
         highestWord = "cat";
@@ -45,16 +46,26 @@ public class StatObject extends Application implements Serializable {
 
         finalScore = 40;
         resetCount = 20;
+        wordCount = 0;
         size = 6;
         minutes = 2;
         highestWord = "apple";
         saveAllToList();
 
-        finalScore = 30;
+        finalScore = 60;
         resetCount = 15;
+        wordCount = 0;
         size = 7;
         minutes = 1;
         highestWord = "banana";
+        saveAllToList();
+
+        finalScore = 80;
+        resetCount = 15;
+        wordCount = 0;
+        size = 4;
+        minutes = 6;
+        highestWord = "dog";
         saveAllToList();
 
     }

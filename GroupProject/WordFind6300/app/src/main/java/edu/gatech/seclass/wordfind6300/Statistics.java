@@ -1,11 +1,15 @@
 package edu.gatech.seclass.wordfind6300;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 public class Statistics extends AppCompatActivity {
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -13,17 +17,134 @@ public class Statistics extends AppCompatActivity {
         setContentView(R.layout.activity_statistics);
 
         if (getIntent().hasExtra("edu.gatech.seclass.gameapp.SOMETHING")) {
-            TextView tv = (TextView) findViewById(R.id.textView5);
-            //TEST: the following is for test!!!!!
-            String text = getIntent().getExtras().getString("edu.gatech.seclass.gameapp.SOMETHING");
-            StatObject so = this.readFile();
-
-            tv.setText(text);
-            text = so.highestWordsList.get(so.highestWordsList.size() - 1);
-            tv.setText(text);
+//            TextView tv = (TextView) findViewById(R.id.textView5);
+//            //TEST: the following is for test!!!!!
+//            String text = getIntent().getExtras().getString("edu.gatech.seclass.gameapp.SOMETHING");
+//            StatObject so = this.readFile();
+//
+//            tv.setText(text);
+//            System.out.print(so.highestWordsList);
+//            text = so.highestWordsList.get(so.highestWordsList.size() - 2);
+//            tv.setText(text);
 
         }
+        String text;
+        StatObject so = this.readFile();
+
+        // sorting structure should be implemented here.
+
+        TextView firstScore = (TextView) findViewById(R.id.textView24);
+        TextView secondScore = (TextView) findViewById(R.id.textView10);
+        TextView thirdScore = (TextView) findViewById(R.id.textView16);
+        TextView fourthScore = (TextView) findViewById(R.id.textView20);
+
+        text = so.finalScores.get(so.finalScores.size() - 1).toString();
+        firstScore.setText(text);
+        text = so.finalScores.get(so.finalScores.size() - 2).toString();
+        secondScore.setText(text);
+        text = so.finalScores.get(so.finalScores.size() - 3).toString();
+        thirdScore.setText(text);
+        text = so.finalScores.get(so.finalScores.size() - 4).toString();
+        fourthScore.setText(text);
+
+        TextView firstResTimes = (TextView) findViewById(R.id.textView25);
+        TextView secondResTimes = (TextView) findViewById(R.id.textView11);
+        TextView thirdResTimes = (TextView) findViewById(R.id.textView17);
+        TextView fourthResTimes = (TextView) findViewById(R.id.textView21);
+
+        text = so.resetCounts.get(so.resetCounts.size() - 1).toString();
+        firstResTimes.setText(text);
+        text = so.resetCounts.get(so.resetCounts.size() - 2).toString();
+        secondResTimes.setText(text);
+        text = so.resetCounts.get(so.resetCounts.size() - 3).toString();
+        thirdResTimes.setText(text);
+        text = so.resetCounts.get(so.resetCounts.size() - 4).toString();
+        fourthResTimes.setText(text);
+
+        TextView firstWordCount = (TextView) findViewById(R.id.textView26);
+        TextView secondWordCount = (TextView) findViewById(R.id.textView12);
+        TextView thirdWordCount = (TextView) findViewById(R.id.textView18);
+        TextView fourthWordCount = (TextView) findViewById(R.id.textView22);
+
+        text = so.wordCounts.get(so.wordCounts.size() - 1).toString();
+        firstWordCount.setText(text);
+        text = so.wordCounts.get(so.wordCounts.size() - 2).toString();
+        secondWordCount.setText(text);
+        text = so.wordCounts.get(so.wordCounts.size() - 3).toString();
+        thirdWordCount.setText(text);
+        text = so.wordCounts.get(so.wordCounts.size() - 4).toString();
+        fourthWordCount.setText(text);
+
+
+        TextView firstWord = (TextView) findViewById(R.id.word1);
+        TextView secondWord = (TextView) findViewById(R.id.word2);
+        TextView thirdWord = (TextView) findViewById(R.id.word3);
+
+        text = so.highestWordsList.get(so.highestWordsList.size() - 1).toString();
+        firstWord.setText(text);
+        text = so.highestWordsList.get(so.highestWordsList.size() - 2).toString();
+        secondWord.setText(text);
+        text = so.highestWordsList.get(so.highestWordsList.size() - 3).toString();
+        thirdWord.setText(text);
+
+        TextView firstWordStat = (TextView) findViewById(R.id.word10);
+        TextView secondWordStat = (TextView) findViewById(R.id.word20);
+        TextView thirdWordStat = (TextView) findViewById(R.id.word30);
+
+        text = so.wordCounts.get(so.wordCounts.size() - 1).toString();
+        firstWordStat.setText(text);
+        text = so.wordCounts.get(so.wordCounts.size() - 2).toString();
+        secondWordStat.setText(text);
+        text = so.wordCounts.get(so.wordCounts.size() - 3).toString();
+        thirdWordStat.setText(text);
+
+
+
     }
+
+
+
+
+    public void handleClick(View view) {
+        TextView settingMinute = (TextView) findViewById(R.id.textView4);
+        TextView settingSize = (TextView) findViewById(R.id.textView9);
+        if (view.getId()== R.id.button4){
+            String text;
+            StatObject so = this.readFile();
+            text = so.minutesList.get(so.minutesList.size() - 1).toString();
+            settingMinute.setText(text);
+            text = so.sizeList.get(so.sizeList.size() - 1).toString();
+            settingSize.setText(text);
+        }
+        else if (view.getId()== R.id.button5) {
+            String text;
+            StatObject so = this.readFile();
+            text = so.minutesList.get(so.minutesList.size() - 2).toString();
+            settingMinute.setText(text);
+            text = so.sizeList.get(so.sizeList.size() - 2).toString();
+            settingSize.setText(text);
+        }
+        else if (view.getId()== R.id.button6) {
+            String text;
+            StatObject so = this.readFile();
+            text = so.minutesList.get(so.minutesList.size() - 3).toString();
+            settingMinute.setText(text);
+            text = so.sizeList.get(so.sizeList.size() - 3).toString();
+            settingSize.setText(text);
+        }
+        else if (view.getId()== R.id.button7) {
+            String text;
+            StatObject so = this.readFile();
+            text = so.minutesList.get(so.minutesList.size() - 4).toString();
+            settingMinute.setText(text);
+            text = so.sizeList.get(so.sizeList.size() - 4).toString();
+            settingSize.setText(text);
+        }
+
+
+    }
+
+
     private StatObject readFile(){
         return ((StatObject)this.getApplication()).readFile();
     }

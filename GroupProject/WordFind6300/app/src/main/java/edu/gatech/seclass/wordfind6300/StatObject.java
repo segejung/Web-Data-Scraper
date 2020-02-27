@@ -21,9 +21,9 @@ public class StatObject extends Application implements Serializable {
     List<Integer> minutesList;
     Set<String> highestWordsList;
 
-    int finalScore = 10;
-    int resetCount = 2;
-    int wordCount = 10;
+    int finalScore = 0;
+    int resetCount = 0;
+    int wordCount = 0;
     int size = 4;
     int minutes = 3;
     String highestWord = "";

@@ -2,7 +2,7 @@
 
 **Topics:**
 
-* [1. Overview](#overview)
+* [1. Overview](#1.-overview)
 * [2. Play Game](#play-game)
     + [2.1 Board](#board)
     + [2.2 Scoring](#scoring)

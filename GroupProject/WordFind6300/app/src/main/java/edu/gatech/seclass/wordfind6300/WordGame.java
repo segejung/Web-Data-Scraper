@@ -83,8 +83,10 @@ public class WordGame extends AppCompatActivity {
             @Override
             public void onClick(View view){
                 String word = String.valueOf(wordInput.getText());
+
+
                 if(wordSet.add(word)){
-                    finalScore += 5;
+                    finalScore++;
                     scoreText.setText(String.valueOf(finalScore));
                     wordInput.setText("");
 

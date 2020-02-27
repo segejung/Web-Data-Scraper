@@ -11,6 +11,7 @@ import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 public class StatObject extends Application implements Serializable {
     List<Integer> finalScores;
@@ -18,11 +19,11 @@ public class StatObject extends Application implements Serializable {
     List<Integer> wordCounts;
     List<Integer> sizeList;
     List<Integer> minutesList;
-    public List<String> highestWordsList;
+    Set<String> highestWordsList;
 
-    int finalScore = 0;
-    int resetCount = 0;
-    int wordCount = 0;
+    int finalScore = 10;
+    int resetCount = 2;
+    int wordCount = 10;
     int size = 4;
     int minutes = 3;
     String highestWord = "";
@@ -34,6 +35,28 @@ public class StatObject extends Application implements Serializable {
         minutesList = new ArrayList();
         highestWordsList = new ArrayList();
         saveAllToList();
+
+        finalScore = 20;
+        resetCount = 5;
+        size = 5;
+        minutes = 3;
+        highestWord = "cat";
+        saveAllToList();
+
+        finalScore = 40;
+        resetCount = 20;
+        size = 6;
+        minutes = 2;
+        highestWord = "apple";
+        saveAllToList();
+
+        finalScore = 30;
+        resetCount = 15;
+        size = 7;
+        minutes = 1;
+        highestWord = "banana";
+        saveAllToList();
+
     }
     public void updateScores(int finalScore){
         this.finalScore = finalScore;
@@ -59,7 +82,7 @@ public class StatObject extends Application implements Serializable {
         wordCounts.add(wordCount);
         sizeList.add(size);
         minutesList.add(minutes);
-        highestWordsList.add(highestWord + "test");
+        highestWordsList.add(highestWord);
     }
 
     public void writeFile(){

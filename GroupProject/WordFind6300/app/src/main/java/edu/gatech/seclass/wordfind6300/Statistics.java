@@ -19,8 +19,6 @@ public class Statistics extends AppCompatActivity {
             StatObject so = this.readFile();
 
             tv.setText(text);
-            text = so.highestWordsList.get(so.highestWordsList.size() - 1);
-            tv.setText(text);
 
         }
     }

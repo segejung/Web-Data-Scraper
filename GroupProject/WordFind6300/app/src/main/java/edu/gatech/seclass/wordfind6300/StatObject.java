@@ -10,6 +10,7 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
@@ -33,7 +34,7 @@ public class StatObject extends Application implements Serializable {
         wordCounts = new ArrayList();
         sizeList = new ArrayList();
         minutesList = new ArrayList();
-        highestWordsList = new ArrayList();
+        highestWordsList = new HashSet();
         saveAllToList();
 
         finalScore = 20;

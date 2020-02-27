@@ -8,18 +8,30 @@ import android.view.View;
 import android.content.Intent;
 import android.view.MenuItem;
 
-import android.widget.Button;
+import android.widget.SeekBar;
 import android.widget.Spinner;
 
 
 import android.os.Bundle;
+import android.widget.TextView;
+import android.widget.Toast;
 
 public class Settings extends AppCompatActivity {
     Spinner gameMinutesSpinner, boardSizeSpinner;
-    Button saveBtn;
+
     // presets for minutes and board sizes
     String[] minutes = new String[] {"1", "2", "3", "4", "5"};
     String[] sizes = new String[] {"4(x4)", "5(x5)", "6(x6)", "7(x7)", "8(x8)"};
+    final String LETTERS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+    TextView letterSelectorValueText;
+    TextView weightSelectorValueText;
+
+    SeekBar letterSeekbar;
+    SeekBar weightSeekbar;
+
+    int letterSelectorValue = 0;
+    int weightSelectorValue = 1;
 
     int numberOfMinutes = 3;
     int boardSize = 4;
@@ -45,13 +57,6 @@ public class Settings extends AppCompatActivity {
         sizesAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         boardSizeSpinner.setAdapter(sizesAdapter);
         boardSizeSpinner.setSelection(0);
-        saveBtn = findViewById(R.id.savebtn);
-        saveBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                writeFile();
-            }
-        });
 
         // When gameMinutesSpinner is clicked, set numberOfMinutes to the item selected
         gameMinutesSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -82,6 +87,49 @@ public class Settings extends AppCompatActivity {
                 return;
             }
 
+        });
+
+        letterSelectorValueText = findViewById(R.id.letterSelectorValueText);
+        weightSelectorValueText = findViewById(R.id.weightSelectorValueText);
+        letterSeekbar = findViewById(R.id.letterSeekbar);
+        weightSeekbar = findViewById(R.id.weightSeekbar);
+        letterSeekbar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            int progressChangedValue = 0;
+
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean b) {
+                progressChangedValue = progress;
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+                char c = LETTERS.charAt(progressChangedValue);
+                letterSelectorValueText.setText(String.valueOf(c));
+            }
+        });
+
+        weightSeekbar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            int progressChangedValue = 0;
+
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean b) {
+                progressChangedValue = progress;
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+                weightSelectorValueText.setText(String.valueOf(progressChangedValue));
+            }
         });
     }
 

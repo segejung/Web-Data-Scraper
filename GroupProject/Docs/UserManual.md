@@ -15,8 +15,8 @@
     + [Game Statistics](#game-statistics)
 
 ## Overview
-The WordGame application is a game that users can enter words using letters from a randomized board and score. 
-See below for four interfaces.
+The WordGame application is a game that users can enter words using letters from a randomized board and keep score. 
+See below for four interfaces. Main UI, Play Game UI, Settings UI, and Statistics UI.
 ![GUI](../images/GUIMockup.png) 
 
 ## Play Game

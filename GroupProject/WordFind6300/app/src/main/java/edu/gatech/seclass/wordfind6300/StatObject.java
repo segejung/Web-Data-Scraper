@@ -22,8 +22,8 @@ public class StatObject extends Application implements Serializable {
     List<Integer> wordCounts;
     List<Integer> sizeList;
     List<Integer> minutesList;
-    Set<String> highestWordsList;
     List<Map<Character, Integer>> letterWeights;
+    Map<String, Integer> highestWordsList;
 
     int finalScore = 0;
     int resetCount = 0;
@@ -49,6 +49,7 @@ public class StatObject extends Application implements Serializable {
 
         finalScore = 20;
         resetCount = 5;
+        wordCount = 0;
         size = 5;
         minutes = 3;
         highestWord = "cat";
@@ -58,6 +59,7 @@ public class StatObject extends Application implements Serializable {
 
         finalScore = 40;
         resetCount = 20;
+        wordCount = 0;
         size = 6;
         minutes = 2;
         highestWord = "apple";
@@ -65,13 +67,22 @@ public class StatObject extends Application implements Serializable {
         letterWeights.add(letterWeight);
         saveAllToList();
 
-        finalScore = 30;
+        finalScore = 60;
         resetCount = 15;
+        wordCount = 0;
         size = 7;
         minutes = 1;
         highestWord = "banana";
         letterWeight.put('B', 4);
         letterWeights.add(letterWeight);
+        saveAllToList();
+
+        finalScore = 80;
+        resetCount = 15;
+        wordCount = 0;
+        size = 4;
+        minutes = 6;
+        highestWord = "dog";
         saveAllToList();
 
     }

@@ -80,7 +80,6 @@ public class StatObject extends Application implements Serializable {
         letterWeight.put('B', 1);
         letterWeights.add(letterWeight);
         saveAllToList();
-
     }
     public void updateScores(int finalScore){
         this.finalScore = finalScore;
@@ -139,7 +138,7 @@ public class StatObject extends Application implements Serializable {
             file.close();
 //            displayText.setText("the last value stored in the allWordsMap is \n" + stat.allWordsMap.get(stat.allWordsMap.size() - 1));
         } catch(IOException ex){
-            Toast.makeText(getApplicationContext(), "IOException is caught, returning a new object", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), "IOException is caught, initializing a new StatObject", Toast.LENGTH_SHORT).show();
             stat =  new StatObject();
         } catch(ClassNotFoundException ex){
             Toast.makeText(getApplicationContext(), "ClassNotFoundException is caught", Toast.LENGTH_SHORT).show();

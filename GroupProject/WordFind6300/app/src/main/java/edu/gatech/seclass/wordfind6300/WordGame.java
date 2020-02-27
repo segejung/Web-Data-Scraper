@@ -2,6 +2,11 @@ package edu.gatech.seclass.wordfind6300;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
@@ -37,9 +42,9 @@ public class WordGame extends AppCompatActivity {
     List<Integer> positionsClicked;
     Set<String> wordSet;
 
-    StatObject so;
     Button endGameBtn;
     final String LETTERS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    StatObject so;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -130,7 +135,6 @@ public class WordGame extends AppCompatActivity {
                 positionsClicked.clear();
             }
         });
-        so = ((StatObject)this.getApplication());
         endGameBtn = findViewById(R.id.endGameBtn);
         endGameBtn.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -138,7 +142,7 @@ public class WordGame extends AppCompatActivity {
                 endGame();
             }
         });
-
+        so = readFile();
     }
 
     public void generateRandom(){
@@ -227,7 +231,47 @@ public class WordGame extends AppCompatActivity {
             Toast.makeText(getApplicationContext(), entry.getKey() +" " + entry.getValue(), Toast.LENGTH_SHORT).show();
         }
         Toast.makeText(getApplicationContext(), "All entries displayed", Toast.LENGTH_SHORT).show();
+        writeFile();
+    }
 
+    public void writeFile(){
+        if(so == null){
+            so = this.readFile();
+        }
+        try{
+            //Saving of object in a file
+            FileOutputStream file = openFileOutput("data.ser", MODE_PRIVATE);
+            ObjectOutputStream out = new ObjectOutputStream(file);
+
+            so.saveAllToList();
+            // Method for serialization of object
+            out.writeObject(so);
+            out.close();
+            file.close();
+
+            Toast.makeText(getApplicationContext(), "Object has been serialized", Toast.LENGTH_SHORT).show();
+        } catch(IOException ex){
+            Toast.makeText(getApplicationContext(), "IOException is caught", Toast.LENGTH_SHORT).show();
+        }
+    }
+    public StatObject readFile(){
+        try{
+            // Reading the object from a file
+            FileInputStream file = openFileInput("data.ser");
+            ObjectInputStream in = new ObjectInputStream(file);
+            // Method for deserialization of object
+            so = (StatObject) in.readObject();
+
+            in.close();
+            file.close();
+//            displayText.setText("the last value stored in the allWordsMap is \n" + stat.allWordsMap.get(stat.allWordsMap.size() - 1));
+        } catch(IOException ex){
+            Toast.makeText(getApplicationContext(), "IOException is caught, initializing a new StatObject", Toast.LENGTH_SHORT).show();
+            so =  new StatObject();
+        } catch(ClassNotFoundException ex){
+            Toast.makeText(getApplicationContext(), "ClassNotFoundException is caught", Toast.LENGTH_SHORT).show();
+        }
+        return so;
     }
 }
 

@@ -141,7 +141,7 @@ public class WordGame extends AppCompatActivity {
         rerollBtn.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
-                // generateRandom();
+                generateRandom();
 
             }
         });

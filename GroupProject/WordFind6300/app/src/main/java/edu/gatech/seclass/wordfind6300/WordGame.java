@@ -150,7 +150,7 @@ public class WordGame extends AppCompatActivity {
         endGameBtn.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
-                endGame(); 
+                endGame();
             }
         });
         so = readFile();

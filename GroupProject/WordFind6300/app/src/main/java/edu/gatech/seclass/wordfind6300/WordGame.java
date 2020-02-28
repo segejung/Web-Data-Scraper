@@ -35,6 +35,7 @@ public class WordGame extends AppCompatActivity {
     Button enterBtn, cancelBtn, rerollBtn;
     TextView wordInput;
     TextView scoreText;
+    TextView timerText;
 
     public int finalScore = 0;
 
@@ -52,7 +53,6 @@ public class WordGame extends AppCompatActivity {
 
         // Keeps the display of components from shifting when the soft keyboard displays when typing
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_NOTHING);
-
 
         // Gets the data of the settings from the Main Screen
         Intent intent = getIntent();

@@ -102,6 +102,7 @@ public class WordGame extends AppCompatActivity {
             }
         });
 
+        rerollBtn = findViewById(R.id.rerollBtn);
         enterBtn = findViewById(R.id.enterBtn);
         cancelBtn = findViewById(R.id.cancelBtn);
         wordInput = findViewById(R.id.wordInput);

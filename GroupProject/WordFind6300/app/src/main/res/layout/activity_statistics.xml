@@ -272,10 +272,9 @@
         </LinearLayout>
 
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/placeHolder"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="TextView"
             android:textSize="30sp" />
 
         <TextView
@@ -322,7 +321,7 @@
                     android:layout_width="80dp"
                     android:layout_height="wrap_content"
                     android:gravity="center_horizontal"
-                    android:text="apple"
+                    android:text="first"
                     android:textSize="16sp" />
 
                 <TextView
@@ -330,7 +329,7 @@
                     android:layout_width="106dp"
                     android:layout_height="wrap_content"
                     android:gravity="center_horizontal"
-                    android:text="1"
+                    android:text="0"
                     android:textSize="16sp" />
 
             </TableRow>
@@ -344,7 +343,7 @@
                     android:layout_width="80dp"
                     android:layout_height="wrap_content"
                     android:gravity="center_horizontal"
-                    android:text="banana"
+                    android:text="second"
                     android:textSize="16sp" />
 
                 <TextView
@@ -366,7 +365,7 @@
                     android:layout_width="80dp"
                     android:layout_height="wrap_content"
                     android:gravity="center_horizontal"
-                    android:text="peach"
+                    android:text="third"
                     android:textSize="16sp" />
 
                 <TextView
@@ -374,7 +373,7 @@
                     android:layout_width="106dp"
                     android:layout_height="wrap_content"
                     android:gravity="center_horizontal"
-                    android:text="2"
+                    android:text="0"
                     android:textSize="16sp" />
 
             </TableRow>

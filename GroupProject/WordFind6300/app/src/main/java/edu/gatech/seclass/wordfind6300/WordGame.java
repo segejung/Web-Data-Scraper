@@ -137,7 +137,7 @@ public class WordGame extends AppCompatActivity {
             }
         });
 
-        // The reroll button makes the board regenerate
+        // The reroll button makes the board regenerate and subtract 5 points.
         rerollBtn.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
@@ -153,7 +153,11 @@ public class WordGame extends AppCompatActivity {
 
                 board.setAdapter(adapter);
 
-                
+                finalScore -= 5;
+                scoreText.setText(String.valueOf(finalScore));
+                wordInput.setText("");
+                positionsClicked.clear();
+
             }
         });
 

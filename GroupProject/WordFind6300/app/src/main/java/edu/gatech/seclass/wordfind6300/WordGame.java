@@ -145,6 +145,7 @@ public class WordGame extends AppCompatActivity {
 
             }
         });
+        
         endGameBtn = findViewById(R.id.endGameBtn);
         endGameBtn.setOnClickListener(new View.OnClickListener(){
             @Override

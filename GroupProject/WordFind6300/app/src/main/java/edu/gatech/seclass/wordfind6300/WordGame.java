@@ -32,7 +32,7 @@ public class WordGame extends AppCompatActivity {
     GridView board;
 
     int numberOfMinutes, boardSize, lettersCount, positionLastClicked = 0;
-    Button enterBtn, cancelBtn;
+    Button enterBtn, cancelBtn, rerollBtn;
     TextView wordInput;
     TextView scoreText;
 

@@ -138,19 +138,19 @@ public class WordGame extends AppCompatActivity {
         });
 
         // The reroll button makes the board regenerate
-        rerollBtn.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view){
-                generateRandom();
+        //rerollBtn.setOnClickListener(new View.OnClickListener(){
+        //    @Override
+        //    public void onClick(View view){
+        //        generateRandom();
 
-            }
-        });
-        
+//            }
+  //      });
+
         endGameBtn = findViewById(R.id.endGameBtn);
         endGameBtn.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
-                endGame();
+                endGame(); 
             }
         });
         so = readFile();

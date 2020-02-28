@@ -142,7 +142,18 @@ public class WordGame extends AppCompatActivity {
             @Override
             public void onClick(View view){
                 generateRandom();
+                board = findViewById(R.id.boardGrid);
 
+                // Set the number of columns of the board
+                board.setNumColumns(boardSize);
+
+                // Set the board with the data from the randomized list of letters
+                ArrayAdapter<String> adapter = new ArrayAdapter<>(getApplicationContext(),
+                        android.R.layout.simple_list_item_1, list);
+
+                board.setAdapter(adapter);
+
+                
             }
         });
 

@@ -14,6 +14,11 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class Statistics extends AppCompatActivity {
 
@@ -87,26 +92,52 @@ public class Statistics extends AppCompatActivity {
         TextView secondWord = (TextView) findViewById(R.id.word2);
         TextView thirdWord = (TextView) findViewById(R.id.word3);
 
-        text = so.allWordsMap.get(so.allWordsMap.size() - 1).toString();
-        firstWord.setText(text);
-        text = so.allWordsMap.get(so.allWordsMap.size() - 2).toString();
-        secondWord.setText(text);
-        text = so.allWordsMap.get(so.allWordsMap.size() - 3).toString();
-        thirdWord.setText(text);
+        List<String> rank = new ArrayList();
+
+        for(Map.Entry entry: so.allWordsMap.entrySet()){
+            if(rank.size() == 0){
+                rank.add(entry.getKey().toString());
+                continue;
+            }
+            for(int i = 0; i < rank.size(); i++){
+                String first = rank.get(0);
+                int frequency = Integer.valueOf(entry.getValue().toString());
+                int firstFrequency =  so.allWordsMap.get(first);
+                if( frequency > firstFrequency){
+                    rank.add(0, entry.getKey().toString());
+                } else if (frequency == firstFrequency){
+                    rank.add(1, entry.getKey().toString());
+                }
+            }
+        }
+
+        if(rank.size() > 0){
+            firstWord.setText(rank.get(0) == null ? "" : rank.get(0));
+        }
+        if(rank.size() > 1){
+            secondWord.setText(rank.get(1) == null ? "" : rank.get(1));
+        }
+        if(rank.size() > 2){
+            thirdWord.setText(rank.get(2) == null ? "" : rank.get(2));
+        }
+
 
         TextView firstWordStat = (TextView) findViewById(R.id.word10);
         TextView secondWordStat = (TextView) findViewById(R.id.word20);
         TextView thirdWordStat = (TextView) findViewById(R.id.word30);
 
-        text = so.wordCounts.get(so.wordCounts.size() - 1).toString();
-        firstWordStat.setText(text);
-        text = so.wordCounts.get(so.wordCounts.size() - 2).toString();
-        secondWordStat.setText(text);
-        text = so.wordCounts.get(so.wordCounts.size() - 3).toString();
-        thirdWordStat.setText(text);
-
-
-
+        if(so.wordCounts.size() > 0){
+            text = so.wordCounts.get(so.wordCounts.size() - 1).toString();
+            firstWordStat.setText(text);
+        }
+        if(so.wordCounts.size() > 1){
+            text = so.wordCounts.get(so.wordCounts.size() - 2).toString();
+            secondWordStat.setText(text);
+        }
+        if(so.wordCounts.size() > 2) {
+            text = so.wordCounts.get(so.wordCounts.size() - 3).toString();
+            thirdWordStat.setText(text);
+        }
     }
 
 
@@ -162,7 +193,7 @@ public class Statistics extends AppCompatActivity {
             out.close();
             file.close();
 
-            Toast.makeText(getApplicationContext(), "Object has been serialized", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), "Data has been saved", Toast.LENGTH_SHORT).show();
         } catch(IOException ex){
             Toast.makeText(getApplicationContext(), "IOException is caught", Toast.LENGTH_SHORT).show();
         }
@@ -180,7 +211,7 @@ public class Statistics extends AppCompatActivity {
             file.close();
 //            displayText.setText("the last value stored in the allWordsMap is \n" + stat.allWordsMap.get(stat.allWordsMap.size() - 1));
         } catch(IOException ex){
-            Toast.makeText(getApplicationContext(), "IOException is caught, initializing a new StatObject", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), "Didn't find saved data, initializing", Toast.LENGTH_SHORT).show();
             stat =  new StatObject();
         } catch(ClassNotFoundException ex){
             Toast.makeText(getApplicationContext(), "ClassNotFoundException is caught", Toast.LENGTH_SHORT).show();

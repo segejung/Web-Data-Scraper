@@ -46,6 +46,7 @@ public class WordGame extends AppCompatActivity {
     Button endGameBtn;
     final String LETTERS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     StatObject so;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

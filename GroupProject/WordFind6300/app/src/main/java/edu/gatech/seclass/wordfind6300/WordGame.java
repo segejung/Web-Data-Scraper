@@ -62,7 +62,7 @@ public class WordGame extends AppCompatActivity {
         // Gets the data of the settings from the Main Screen
         Intent intent = getIntent();
 
-        numberOfMinutes = intent.getIntExtra("minutes", 3);
+        //numberOfMinutes = intent.getIntExtra("minutes", 3);
         boardSize = intent.getIntExtra("boardSize", 4);
 
         lettersCount = boardSize * boardSize;
@@ -70,9 +70,9 @@ public class WordGame extends AppCompatActivity {
         // randomly generates the board
         generateRandom();
 
+        // timer start
+        startTimer();
         board = findViewById(R.id.boardGrid);
-
-
 
         // Set the number of columns of the board
         board.setNumColumns(boardSize);
@@ -109,6 +109,7 @@ public class WordGame extends AppCompatActivity {
             }
         });
 
+        //Initializing
         rerollBtn = findViewById(R.id.rerollBtn);
         enterBtn = findViewById(R.id.enterBtn);
         cancelBtn = findViewById(R.id.cancelBtn);
@@ -162,6 +163,7 @@ public class WordGame extends AppCompatActivity {
 
                 board.setAdapter(adapter);
 
+                //deducts 5 points
                 finalScore -= 5;
                 scoreText.setText(String.valueOf(finalScore));
                 wordInput.setText("");
@@ -180,8 +182,35 @@ public class WordGame extends AppCompatActivity {
         so = readFile();
     }
 
+    // method for startTimer
     public void startTimer() {
-        
+        countDownTimer = new CountDownTimer(timeLeftInMilliseconds, 1000) {
+            @Override
+            public void onTick(long l) {
+                timeLeftInMilliseconds = l;
+                updateTimer();
+            }
+
+            @Override
+            public void onFinish() {
+
+            }
+        }.start();
+    }
+
+    // method for updating timer
+    public void updateTimer() {
+        int minutes = (int) timeLeftInMilliseconds / 60000;
+        int seconds = (int) timeLeftInMilliseconds % 60000 / 1000;
+
+        String timeLeftText;
+
+        timeLeftText = "" + minutes;
+        timeLeftText += ":";
+        if (seconds < 10) timeLeftText += "0";
+        timeLeftText += seconds;
+
+        countDownText.setText(timeLeftText);
     }
 
     public void generateRandom(){

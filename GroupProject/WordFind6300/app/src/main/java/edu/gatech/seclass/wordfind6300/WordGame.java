@@ -19,6 +19,7 @@ import java.util.Set;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.view.View;
 import android.widget.Button;
 import android.widget.GridView;
@@ -35,7 +36,10 @@ public class WordGame extends AppCompatActivity {
     Button enterBtn, cancelBtn, rerollBtn;
     TextView wordInput;
     TextView scoreText;
-    TextView timerText;
+    TextView countDownText;
+    CountDownTimer countDownTimer;
+    long timeLeftInMilliseconds = 180000; //3 minutes
+    private boolean timeRunning;
 
     public int finalScore = 0;
 
@@ -67,6 +71,8 @@ public class WordGame extends AppCompatActivity {
         generateRandom();
 
         board = findViewById(R.id.boardGrid);
+
+
 
         // Set the number of columns of the board
         board.setNumColumns(boardSize);
@@ -108,7 +114,7 @@ public class WordGame extends AppCompatActivity {
         cancelBtn = findViewById(R.id.cancelBtn);
         wordInput = findViewById(R.id.wordInput);
         scoreText = findViewById(R.id.scoreText);
-        timerText = findViewById(R.id.timerText);
+        countDownText = findViewById(R.id.countDownText);
 
         wordSet = new HashSet();
         enterBtn.setOnClickListener(new View.OnClickListener(){
@@ -174,7 +180,9 @@ public class WordGame extends AppCompatActivity {
         so = readFile();
     }
 
-
+    public void startTimer() {
+        
+    }
 
     public void generateRandom(){
         list = new ArrayList<>();

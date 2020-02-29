@@ -99,16 +99,15 @@ public class Statistics extends AppCompatActivity {
                 rank.add(entry.getKey().toString());
                 continue;
             }
-            for(int i = 0; i < rank.size(); i++){
-                String first = rank.get(0);
-                int frequency = Integer.valueOf(entry.getValue().toString());
-                int firstFrequency =  so.allWordsMap.get(first);
-                if( frequency > firstFrequency){
-                    rank.add(0, entry.getKey().toString());
-                } else if (frequency == firstFrequency){
-                    rank.add(1, entry.getKey().toString());
-                }
+            String first = rank.get(0);
+            int frequency = Integer.valueOf(entry.getValue().toString());
+            int firstFrequency =  so.allWordsMap.get(first);
+            if( frequency > firstFrequency){
+                rank.add(0, entry.getKey().toString());
+            } else if (frequency == firstFrequency){
+                rank.add(1, entry.getKey().toString());
             }
+
         }
 
         if(rank.size() > 0){
@@ -120,8 +119,7 @@ public class Statistics extends AppCompatActivity {
         if(rank.size() > 2){
             thirdWord.setText(rank.get(2) == null ? "" : rank.get(2));
         }
-
-
+        
         TextView firstWordStat = (TextView) findViewById(R.id.word10);
         TextView secondWordStat = (TextView) findViewById(R.id.word20);
         TextView thirdWordStat = (TextView) findViewById(R.id.word30);

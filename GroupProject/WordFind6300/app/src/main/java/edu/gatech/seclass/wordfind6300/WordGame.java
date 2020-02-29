@@ -39,7 +39,6 @@ public class WordGame extends AppCompatActivity {
     TextView countDownText;
     CountDownTimer countDownTimer;
     long timeLeftInMilliseconds = 180000; //3 minutes
-    private boolean timeRunning;
 
     public int finalScore = 0;
 
@@ -62,7 +61,7 @@ public class WordGame extends AppCompatActivity {
         // Gets the data of the settings from the Main Screen
         Intent intent = getIntent();
 
-        //numberOfMinutes = intent.getIntExtra("minutes", 3);
+        numberOfMinutes = intent.getIntExtra("minutes", 3);
         boardSize = intent.getIntExtra("boardSize", 4);
 
         lettersCount = boardSize * boardSize;

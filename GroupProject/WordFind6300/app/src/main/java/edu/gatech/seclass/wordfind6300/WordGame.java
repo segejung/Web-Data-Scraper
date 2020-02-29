@@ -108,6 +108,8 @@ public class WordGame extends AppCompatActivity {
         cancelBtn = findViewById(R.id.cancelBtn);
         wordInput = findViewById(R.id.wordInput);
         scoreText = findViewById(R.id.scoreText);
+        timerText = findViewById(R.id.timerText);
+
         wordSet = new HashSet();
         enterBtn.setOnClickListener(new View.OnClickListener(){
             @Override

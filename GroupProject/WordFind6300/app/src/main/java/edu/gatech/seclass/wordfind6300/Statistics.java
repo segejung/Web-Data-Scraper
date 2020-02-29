@@ -119,7 +119,7 @@ public class Statistics extends AppCompatActivity {
         if(rank.size() > 2){
             thirdWord.setText(rank.get(2) == null ? "" : rank.get(2));
         }
-        
+
         TextView firstWordStat = (TextView) findViewById(R.id.word10);
         TextView secondWordStat = (TextView) findViewById(R.id.word20);
         TextView thirdWordStat = (TextView) findViewById(R.id.word30);

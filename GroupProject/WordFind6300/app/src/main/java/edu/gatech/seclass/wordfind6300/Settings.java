@@ -8,7 +8,6 @@ import android.view.View;
 import android.content.Intent;
 import android.view.MenuItem;
 
-import android.widget.Button;
 import android.widget.SeekBar;
 import android.widget.Spinner;
 
@@ -44,9 +43,7 @@ public class Settings extends AppCompatActivity {
     int boardSize = 4;
     StatObject so = null;
     char letterToChange = 'A';
-
-
-    Button saveBtn;
+    int letterChangedValue = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -108,12 +105,25 @@ public class Settings extends AppCompatActivity {
         weightSelectorValueText = findViewById(R.id.weightSelectorValueText);
         letterSeekbar = findViewById(R.id.letterSeekbar);
         weightSeekbar = findViewById(R.id.weightSeekbar);
+
+        // Default weights of all letters to 1
+        for (Character letter : LETTERS.toCharArray()) {
+            so.letterWeight.put(letter, 1);
+        }
+
         letterSeekbar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
-            int progressChangedValue = 0;
+            //int progressChangedValue = 0;
 
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean b) {
-                progressChangedValue = progress;
+                letterChangedValue = progress;
+
+                letterToChange = LETTERS.charAt(letterChangedValue);
+                letterSelectorValueText.setText(String.valueOf(letterToChange));
+
+                // Update to the weight to correspond with the current letter
+                weightSeekbar.setProgress(so.letterWeight.get(letterToChange));
+                weightSelectorValueText.setText(String.valueOf(so.letterWeight.get(letterToChange)));
             }
 
             @Override
@@ -123,8 +133,7 @@ public class Settings extends AppCompatActivity {
 
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {
-                letterToChange = LETTERS.charAt(progressChangedValue);
-                letterSelectorValueText.setText(String.valueOf(letterToChange));
+
             }
         });
 
@@ -134,6 +143,10 @@ public class Settings extends AppCompatActivity {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean b) {
                 progressChangedValue = progress;
+
+                // Update the weight of the current letter
+                weightSelectorValueText.setText(String.valueOf(progressChangedValue));
+                so.letterWeight.put(letterToChange, progressChangedValue);
             }
 
             @Override
@@ -143,16 +156,7 @@ public class Settings extends AppCompatActivity {
 
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {
-                weightSelectorValueText.setText(String.valueOf(progressChangedValue));
-                so.letterWeight.put(letterToChange, progressChangedValue);
-            }
-        });
 
-        saveBtn = findViewById(R.id.saveBtn);
-        saveBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                writeFile();
             }
         });
     }

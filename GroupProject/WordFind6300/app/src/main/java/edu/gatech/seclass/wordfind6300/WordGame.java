@@ -7,9 +7,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
-import java.util.HashMap;
 import java.util.HashSet;
-import java.util.Iterator;
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Map;
@@ -54,6 +52,7 @@ public class WordGame extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_word_game);
+        so = ((StatObject)this.getApplication());
 
         // Keeps the display of components from shifting when the soft keyboard displays when typing
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_NOTHING);
@@ -214,14 +213,12 @@ public class WordGame extends AppCompatActivity {
 
     public void generateRandom(){
         list = new ArrayList<>();
-        // A dummy map to simulate a weight map for now ------------------
-        Map<Character, Integer> dummyMap = new HashMap();
 
         String consonants = "";
         String vowels = "";
 
         for(Character c : LETTERS.toCharArray()){
-            for (int i = 0; i < dummyMap.getOrDefault(c, 1); i++) {
+            for (int i = 0; i < so.letterWeight.getOrDefault(c, 1); i++) {
                 String C = Character.toString(c);
                 if ("AEIOU".indexOf(C) >= 0) {
                     vowels += C;
@@ -230,8 +227,6 @@ public class WordGame extends AppCompatActivity {
                 }
             }
         }
-
-        // end of dummy map-------------------------------------------------
 
         int consonantCount = 0;
         int vowelCount = 0;

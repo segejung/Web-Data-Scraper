@@ -99,7 +99,7 @@
                     android:layout_width="80dp"
                     android:layout_height="wrap_content"
                     android:gravity="center_horizontal"
-                    android:text="5"
+                    android:text="0"
                     android:textSize="16sp" />
 
                 <TextView
@@ -107,7 +107,7 @@
                     android:layout_width="106dp"
                     android:layout_height="wrap_content"
                     android:gravity="center_horizontal"
-                    android:text="1"
+                    android:text="0"
                     android:textSize="16sp" />
 
                 <TextView
@@ -115,7 +115,7 @@
                     android:layout_width="80dp"
                     android:layout_height="wrap_content"
                     android:gravity="center_horizontal"
-                    android:text="10"
+                    android:text="0"
                     android:textSize="16sp" />
             </TableRow>
 
@@ -135,7 +135,7 @@
                     android:layout_width="80dp"
                     android:layout_height="wrap_content"
                     android:gravity="center_horizontal"
-                    android:text="8"
+                    android:text="0"
                     android:textSize="16sp" />
 
                 <TextView
@@ -151,7 +151,7 @@
                     android:layout_width="80dp"
                     android:layout_height="wrap_content"
                     android:gravity="center_horizontal"
-                    android:text="8"
+                    android:text="0"
                     android:textSize="16sp" />
             </TableRow>
 
@@ -171,7 +171,7 @@
                     android:layout_width="80dp"
                     android:layout_height="wrap_content"
                     android:gravity="center_horizontal"
-                    android:text="6"
+                    android:text="0"
                     android:textSize="16sp" />
 
                 <TextView
@@ -179,7 +179,7 @@
                     android:layout_width="106dp"
                     android:layout_height="wrap_content"
                     android:gravity="center_horizontal"
-                    android:text="2"
+                    android:text="0"
                     android:textSize="16sp" />
 
                 <TextView
@@ -187,7 +187,7 @@
                     android:layout_width="80dp"
                     android:layout_height="wrap_content"
                     android:gravity="center_horizontal"
-                    android:text="16"
+                    android:text="0"
                     android:textSize="16sp" />
             </TableRow>
 
@@ -207,7 +207,7 @@
                     android:layout_width="80dp"
                     android:layout_height="wrap_content"
                     android:gravity="center_horizontal"
-                    android:text="7"
+                    android:text="0"
                     android:textSize="16sp" />
 
                 <TextView
@@ -215,7 +215,7 @@
                     android:layout_width="106dp"
                     android:layout_height="wrap_content"
                     android:gravity="center_horizontal"
-                    android:text="1"
+                    android:text="0"
                     android:textSize="16sp" />
 
                 <TextView
@@ -223,7 +223,7 @@
                     android:layout_width="80dp"
                     android:layout_height="wrap_content"
                     android:gravity="center_horizontal"
-                    android:text="12"
+                    android:text="0"
                     android:textSize="16sp" />
             </TableRow>
 

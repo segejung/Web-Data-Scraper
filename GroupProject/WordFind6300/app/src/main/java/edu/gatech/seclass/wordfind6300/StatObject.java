@@ -33,46 +33,6 @@ public class StatObject extends Application implements Serializable {
         letterWeight = new HashMap();
         letterWeights = new ArrayList();
         allWordsMap = new HashMap();
-
-        letterWeight.put('B', 2);
-        letterWeights.add(letterWeight);
-        saveAllToList();
-
-        finalScore = 20;
-        resetCount = 5;
-        wordCount = 0;
-        size = 5;
-        minutes = 3;
-        letterWeight.put('B', 5);
-        letterWeights.add(letterWeight);
-        saveAllToList();
-
-        finalScore = 40;
-        resetCount = 20;
-        wordCount = 0;
-        size = 6;
-        minutes = 2;
-        letterWeight.put('B', 3);
-        letterWeights.add(letterWeight);
-        saveAllToList();
-
-        finalScore = 60;
-        resetCount = 15;
-        wordCount = 0;
-        size = 7;
-        minutes = 1;
-        letterWeight.put('B', 4);
-        letterWeights.add(letterWeight);
-        saveAllToList();
-
-        finalScore = 80;
-        resetCount = 15;
-        wordCount = 0;
-        size = 4;
-        minutes = 6;
-        letterWeight.put('B', 1);
-        letterWeights.add(letterWeight);
-        saveAllToList();
     }
     public void updateScores(int finalScore){
         this.finalScore = finalScore;

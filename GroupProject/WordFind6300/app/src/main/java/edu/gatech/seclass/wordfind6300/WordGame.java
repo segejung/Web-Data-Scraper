@@ -36,7 +36,7 @@ public class WordGame extends AppCompatActivity {
     TextView scoreText;
     TextView countDownText;
     CountDownTimer countDownTimer;
-    long timeLeftInMilliseconds = (long)numberOfMinutes * 60 * 1000; //3 minutes
+    long timeLeftInMilliseconds = 63000; //3 minutes
 
     public int finalScore = 0;
 
@@ -196,7 +196,7 @@ public class WordGame extends AppCompatActivity {
     }
 
     // method for updating timer
-    public void updateTimer (long timeLeft) {
+    public void updateTimer () {
         int minutes = (int) timeLeftInMilliseconds / 60000;
         int seconds = (int) timeLeftInMilliseconds % 60000 / 1000;
 

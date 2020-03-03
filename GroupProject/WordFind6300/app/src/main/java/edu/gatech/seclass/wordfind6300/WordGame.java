@@ -36,7 +36,7 @@ public class WordGame extends AppCompatActivity {
     TextView scoreText;
     TextView countDownText;
     CountDownTimer countDownTimer;
-    long timeLeftInMilliseconds = 180000; //3 minutes
+    long timeLeftInMilliseconds = (long)numberOfMinutes * 60 * 1000; //3 minutes
 
     public int finalScore = 0;
 
@@ -62,7 +62,6 @@ public class WordGame extends AppCompatActivity {
 
         numberOfMinutes = intent.getIntExtra("minutes", 3);
         boardSize = intent.getIntExtra("boardSize", 4);
-
         lettersCount = boardSize * boardSize;
 
         // randomly generates the board
@@ -191,13 +190,13 @@ public class WordGame extends AppCompatActivity {
 
             @Override
             public void onFinish() {
-
+            // type what action to do when finish.
             }
         }.start();
     }
 
     // method for updating timer
-    public void updateTimer() {
+    public void updateTimer (long timeLeft) {
         int minutes = (int) timeLeftInMilliseconds / 60000;
         int seconds = (int) timeLeftInMilliseconds % 60000 / 1000;
 

@@ -151,6 +151,7 @@ public class WordGame extends AppCompatActivity {
             public void onClick(View view){
                 generateRandom();
                 board = findViewById(R.id.boardGrid);
+                so.resetCount++;
 
                 // Set the number of columns of the board
                 board.setNumColumns(boardSize);
@@ -284,6 +285,8 @@ public class WordGame extends AppCompatActivity {
         positionsClicked.add(position);
     }
     private void endGame(){
+        countDownTimer.cancel();
+        countDownText.setText("0:00");
         for(String word : wordSet){
             int count = so.allWordsMap.getOrDefault(word, 0);
             so.allWordsMap.put(word, count + 1);
@@ -293,6 +296,8 @@ public class WordGame extends AppCompatActivity {
             Toast.makeText(getApplicationContext(), entry.getKey() +" " + entry.getValue(), Toast.LENGTH_SHORT).show();
         }
         Toast.makeText(getApplicationContext(), "All entries displayed", Toast.LENGTH_SHORT).show();
+        so.finalScore = this.finalScore;
+
         writeFile();
     }
 

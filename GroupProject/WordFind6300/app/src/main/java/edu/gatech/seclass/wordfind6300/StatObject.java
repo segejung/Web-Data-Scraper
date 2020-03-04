@@ -21,7 +21,6 @@ public class StatObject extends Application implements Serializable {
     int wordCount = 0;
     int size = 4;
     int minutes = 3;
-    String highestWord = "";
     Map<Character, Integer> letterWeight;
 
     public StatObject(){
@@ -48,9 +47,6 @@ public class StatObject extends Application implements Serializable {
     }
     public void updateMinutes(int minutes){
         this.minutes = minutes;
-    }
-    public void updateHighestWord(String highestWord){
-        this.highestWord = highestWord;
     }
     public void saveAllToList(){
         finalScores.add(finalScore);

@@ -130,7 +130,7 @@ public class WordGame extends AppCompatActivity {
                         scoreText.setText(String.valueOf(finalScore));
                         wordInput.setText("");
                         positionsClicked.clear();
-
+                        so.wordCount++;
                     } else {
                         Toast.makeText(getApplicationContext(), "The word has been used in this game!", Toast.LENGTH_SHORT).show();
                     }

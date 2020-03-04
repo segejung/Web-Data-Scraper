@@ -61,6 +61,7 @@ public class WordGame extends AppCompatActivity {
         Intent intent = getIntent();
 
         numberOfMinutes = intent.getIntExtra("minutes", 3);
+        so.minutes = numberOfMinutes;
         timeLeftInMilliseconds = (long)numberOfMinutes * 60000; //3 minutes
         boardSize = intent.getIntExtra("boardSize", 4);
         lettersCount = boardSize * boardSize;
@@ -178,7 +179,6 @@ public class WordGame extends AppCompatActivity {
                 endGame();
             }
         });
-        so = readFile();
     }
 
     // method for startTimer

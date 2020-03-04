@@ -55,5 +55,4 @@ public class StatObject extends Application implements Serializable {
         sizeList.add(size);
         minutesList.add(minutes);
     }
-
 }

@@ -36,9 +36,6 @@ public class Settings extends AppCompatActivity {
     SeekBar letterSeekbar;
     SeekBar weightSeekbar;
 
-    int letterSelectorValue = 0;
-    int weightSelectorValue = 1;
-
     int numberOfMinutes = 3;
     int boardSize = 4;
     StatObject so = null;
@@ -190,24 +187,6 @@ public class Settings extends AppCompatActivity {
         return(super.onOptionsItemSelected(item));
     }
 
-    public void writeFile(){
-        StatObject stat = this.readFile();
-        try{
-            //Saving of object in a file
-            FileOutputStream file = openFileOutput("data.ser", MODE_PRIVATE);
-            ObjectOutputStream out = new ObjectOutputStream(file);
-
-            stat.saveAllToList();
-            // Method for serialization of object
-            out.writeObject(stat);
-            out.close();
-            file.close();
-
-            Toast.makeText(getApplicationContext(), "Object has been serialized", Toast.LENGTH_SHORT).show();
-        } catch(IOException ex){
-            Toast.makeText(getApplicationContext(), "IOException is caught", Toast.LENGTH_SHORT).show();
-        }
-    }
     public StatObject readFile(){
         StatObject stat = null;
         try{

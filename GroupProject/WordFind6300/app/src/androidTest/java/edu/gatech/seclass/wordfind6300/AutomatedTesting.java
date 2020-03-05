@@ -18,6 +18,7 @@ import static androidx.test.espresso.assertion.ViewAssertions.matches;
 import static androidx.test.espresso.matcher.ViewMatchers.hasErrorText;
 import static androidx.test.espresso.matcher.ViewMatchers.withSpinnerText;
 import static androidx.test.espresso.matcher.ViewMatchers.withText;
+import static org.hamcrest.Matchers.anything;
 import static org.hamcrest.Matchers.containsString;
 import static org.hamcrest.Matchers.instanceOf;
 import static org.hamcrest.Matchers.is;
@@ -116,10 +117,27 @@ public class AutomatedTesting {
 
 
     }
+
+    //start a game and enter a word to see if the score is correct
     @Test
-    public void Test6() {}
+    public void Test6() {
+        onView(withId(R.id.playButton)).perform(click());
+        onData(anything()).inAdapterView(withId(R.id.boardGrid)).atPosition(0).perform(click());
+        onData(anything()).inAdapterView(withId(R.id.boardGrid)).atPosition(1).perform(click());
+        onView(withId(R.id.enterBtn)).perform(click());
+        onView(withId(R.id.scoreText)).check(matches(withText(containsString("2"))));
+    }
+
+    //start a game and try to select non-adjacent letter
     @Test
-    public void Test7() {}
+    public void Test7() {
+        onView(withId(R.id.playButton)).perform(click());
+        onData(anything()).inAdapterView(withId(R.id.boardGrid)).atPosition(0).perform(click());
+        onData(anything()).inAdapterView(withId(R.id.boardGrid)).atPosition(2).perform(click());
+        onView(withId(R.id.enterBtn)).perform(click());
+        onView(withId(R.id.scoreText)).check(matches(withText(containsString("0"))));
+    }
+
     @Test
     public void Test8() {}
     @Test

@@ -39,6 +39,8 @@ public class WordGame extends AppCompatActivity {
     long timeLeftInMilliseconds;
 
     public int finalScore = 0;
+    //set the random seed to help with automated testing
+    Random r = new Random(6300);
 
     List<String> list;
     List<Integer> positionsClicked;
@@ -67,7 +69,7 @@ public class WordGame extends AppCompatActivity {
         lettersCount = boardSize * boardSize;
 
         // randomly generates the board
-        generateRandom();
+        generateRandom(r);
 
         // timer start
         startTimer();
@@ -150,7 +152,7 @@ public class WordGame extends AppCompatActivity {
         rerollBtn.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
-                generateRandom();
+                generateRandom(r);
                 board = findViewById(R.id.boardGrid);
                 so.resetCount++;
 
@@ -212,7 +214,7 @@ public class WordGame extends AppCompatActivity {
         countDownText.setText(timeLeftText);
     }
 
-    public void generateRandom(){
+    public void generateRandom(Random r){
         list = new ArrayList<>();
 
         String consonants = "";
@@ -242,7 +244,7 @@ public class WordGame extends AppCompatActivity {
         consonantCount = (int) Math.floor((double) lettersCount * .80);
         vowelCount = (int) Math.ceil((double) lettersCount * .20);
 
-        Random r = new Random();
+//        Random r = new Random(6300);
 
         for (int i = 0; i < consonantCount; i++){
             char c = consonants.charAt(r.nextInt(consonants.length()));
@@ -259,7 +261,8 @@ public class WordGame extends AppCompatActivity {
         }
 
         // Shuffle the list to randomize the board
-        Collections.shuffle(list);
+
+        Collections.shuffle(list, r);
     }
 
     // c = number of columns

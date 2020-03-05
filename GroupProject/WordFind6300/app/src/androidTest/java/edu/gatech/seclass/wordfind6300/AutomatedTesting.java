@@ -88,13 +88,34 @@ public class AutomatedTesting {
         onView(withId(R.id.enterBtn)).perform(click());
         onView(withId(R.id.scoreText)).check(matches(withText(containsString("2"))));
 
+        onView(withId(R.id.endGameBtn)).perform(click());
+        pressBack();
 
-//        onView(withId(R.id.boardGrid)).perform(click(1));
-//        onView(withId(R.id.scoreText)).check(matches(withText(containsString("-15"))));
+        onView(withId(R.id.statisticsButton)).perform(click());
+        onView(withId(R.id.textView24)).check(matches(withText(containsString("2"))));
+        onView(withId(R.id.textView25)).check(matches(withText(containsString("0"))));
+        onView(withId(R.id.textView26)).check(matches(withText(containsString("1"))));
+        onView(withId(R.id.word1)).check(matches(withText(containsString("HU"))));
+        onView(withId(R.id.word10)).check(matches(withText(containsString("1"))));
+
+
+
+
     }
 
     @Test
-    public void Test5() {}
+    public void Test5() {
+        onView(withId(R.id.playButton)).perform(click());
+        onData(allOf(is(instanceOf(String.class)), is("H"))).perform(click());
+        onData(allOf(is(instanceOf(String.class)), is("U"))).perform(click());
+        onView(withId(R.id.enterBtn)).perform(click());
+        onView(withId(R.id.endGameBtn)).perform(click());
+        pressBack();
+
+
+
+
+    }
     @Test
     public void Test6() {}
     @Test

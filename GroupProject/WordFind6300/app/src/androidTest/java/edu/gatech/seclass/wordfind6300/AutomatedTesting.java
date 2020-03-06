@@ -1,9 +1,15 @@
 package edu.gatech.seclass.wordfind6300;
 
+import android.os.IBinder;
+import android.view.WindowManager;
+
 import androidx.test.espresso.Espresso;
+import androidx.test.espresso.Root;
 import androidx.test.rule.ActivityTestRule;
 import androidx.test.runner.AndroidJUnit4;
 
+import org.hamcrest.Description;
+import org.hamcrest.TypeSafeMatcher;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -138,16 +144,82 @@ public class AutomatedTesting {
         onView(withId(R.id.scoreText)).check(matches(withText(containsString("0"))));
     }
 
+    //test the Qu to see if it is counted as 2 points instead of 1 point
     @Test
-    public void Test8() {}
+    public void Test8() {
+        onView(withId(R.id.playButton)).perform(click());
+        onView(withId(R.id.rerollBtn)).perform(click());
+        onData(anything()).inAdapterView(withId(R.id.boardGrid)).atPosition(8).perform(click());
+        onData(anything()).inAdapterView(withId(R.id.boardGrid)).atPosition(9).perform(click());
+        onData(anything()).inAdapterView(withId(R.id.boardGrid)).atPosition(10).perform(click());
+        onView(withId(R.id.enterBtn)).perform(click());
+        onView(withId(R.id.scoreText)).check(matches(withText(containsString("-1"))));
+    }
     @Test
-    public void Test9() {}
+    public void Test9() {
+        onView(withId(R.id.settingsButton)).perform(click());
+        onView(withId(R.id.gameMinutesSpinner)).perform(click());
+        onData(allOf(is(instanceOf(String.class)), is("4"))).perform(click());
+        onView(withId(R.id.boardSizeSpinner)).perform(click());
+        onData(allOf(is(instanceOf(String.class)), is("4(x4)"))).perform(click());
+        Espresso.closeSoftKeyboard();
+        pressBack();
+
+        onView(withId(R.id.playButton)).perform(click());
+        onData(anything()).inAdapterView(withId(R.id.boardGrid)).atPosition(0).perform(click());
+        onData(anything()).inAdapterView(withId(R.id.boardGrid)).atPosition(1).perform(click());
+        onData(anything()).inAdapterView(withId(R.id.boardGrid)).atPosition(2).perform(click());
+        onData(anything()).inAdapterView(withId(R.id.boardGrid)).atPosition(3).perform(click());
+        onView(withId(R.id.enterBtn)).perform(click());
+        onData(anything()).inAdapterView(withId(R.id.boardGrid)).atPosition(4).perform(click());
+        onData(anything()).inAdapterView(withId(R.id.boardGrid)).atPosition(5).perform(click());
+        onData(anything()).inAdapterView(withId(R.id.boardGrid)).atPosition(6).perform(click());
+        onData(anything()).inAdapterView(withId(R.id.boardGrid)).atPosition(7).perform(click());
+        onView(withId(R.id.enterBtn)).perform(click());
+        onData(anything()).inAdapterView(withId(R.id.boardGrid)).atPosition(8).perform(click());
+        onData(anything()).inAdapterView(withId(R.id.boardGrid)).atPosition(9).perform(click());
+        onData(anything()).inAdapterView(withId(R.id.boardGrid)).atPosition(10).perform(click());
+        onData(anything()).inAdapterView(withId(R.id.boardGrid)).atPosition(11).perform(click());
+        onView(withId(R.id.enterBtn)).perform(click());
+        onView(withId(R.id.endGameBtn)).perform(click());
+        pressBack();
+
+        onView(withId(R.id.statisticsButton)).perform(click());
+        onView(withId(R.id.button4)).perform(click());
+        onView(withId(R.id.textView4)).check(matches(withText(containsString("4"))));
+        onView(withId(R.id.textView9)).check(matches(withText(containsString("4"))));
+    }
     @Test
-    public void Test10() {}
-    @Test
-    public void Test11() {}
-    @Test
-    public void Test12() {}
+    public void Test10() {
+
+        onView(withId(R.id.playButton)).perform(click());
+        onData(anything()).inAdapterView(withId(R.id.boardGrid)).atPosition(0).perform(click());
+        onData(anything()).inAdapterView(withId(R.id.boardGrid)).atPosition(0).perform(click());
+        onView(withText(R.string.)).inRoot(new ToastMatcher())
+                .check(matches(isDisplayed()));
+    }
+
+    public class ToastMatcher extends TypeSafeMatcher<Root> {
+
+        @Override
+        public void describeTo(Description description) {
+            description.appendText("is toast");
+        }
+
+        @Override
+        public boolean matchesSafely(Root root) {
+            int type = root.getWindowLayoutParams().get().type;
+            if ((type == WindowManager.LayoutParams.TYPE_TOAST)) {
+                IBinder windowToken = root.getDecorView().getWindowToken();
+                IBinder appToken = root.getDecorView().getApplicationWindowToken();
+                if (windowToken == appToken) {
+                    return true;
+                }
+            }
+            return false;
+        }
+    }
+
 
 
 

@@ -54,5 +54,8 @@ public class StatObject extends Application implements Serializable {
         wordCounts.add(wordCount);
         sizeList.add(size);
         minutesList.add(minutes);
+        finalScore = 0;
+        resetCount = 0;
+        wordCount = 0;
     }
 }

@@ -1,6 +1,7 @@
 # USER MANUAL
 
 Author: Team112 Version: 2.0 Date: Feb 20 2020
+
 **Topics:**
 
 * [Overview](#overview)

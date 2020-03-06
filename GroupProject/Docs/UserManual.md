@@ -45,7 +45,5 @@ Game statistics displays tables of points, number of times reroll, and game numb
 Each game number has a link so that users can view game settings. 
 
 
-![](../images/mainUI.png)
-![](../images/playUI.png)
-![](../images/statisticsUI.png)
-![](../images/settingsUI.png)
+![](../images/mergedUI.png)
+

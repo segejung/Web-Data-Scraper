@@ -49,18 +49,16 @@ iv. other details - like screen capture, possible root causes, steps to show the
 
 | Test#   |      Test Name      |  Detailed Steps |  Correct/Expected Values |PASS/FAIL|
 |:--:|:-------------:|------|------|:-------------:|
-| 1 |  test game setting | input various game settings into the software, 5x size, 5x weight, 3x minutes |the generated game should match the input values, UI updated | TBD|
-| 2 |    view statistics - word   |   first run through different games. then enable statistics view button | the output result should match the currect saved word, UI updated. The number of times the word has been played, across all games| TBD|
-| 3 | view statistics - game |    first run through different games. then enable statistics view button | the UI will show the list of scores, in descending order by final game score. The values have to match. also test the highest score and check for the right value| TBD|
-|4| play game| click on play game | board generated and UI updated| TBD|
-|5| enter word and validate word| user to enter a input as the word for the game | the attribute gets updated and UI is also updated. The score should be updated as well| TBD|
-|6| lag test | pick any other 5 tests and record the time spent | process time < 2secs to qualify as PASS| TBD|
-|7| re-roll test| user to click on re-roll button | a new board should be initialized, UI updated and score goes down by 5 points| TBD|
-|8| exit game| user to click on exit button| the attributes all get updated. UI updated to display the final score| TBD|
-|9|Test Qu | Game to include Qu cases| it should be counted as 1 letter| TBD|
-|10| vowels and consonants| user to play multiple games. Check each game board's vowels and consonants| ⅕ (rounded up) of the letters will be vowels (a,e,i,o,u). ⅘ will be consonants| TBD|
-|11| view statistics - setting |    first run through different games. then enable statistics view button and check the corresponding setting | the UI will show the correcct setting information used during that game | TBD|
-|12|validate word in more details| user to enter ten different words. Check if the words meet all the requirements. | Then check if the software updates to the right score or error msg| TBD|
+| 1 |  test game setting | input various game settings into the software, 5x size, 5x weight, 3x minutes |the generated game should match the input values, UI updated | PASS |
+| 2 |    view statistics - word   |   first run through different games. then enable statistics view button | the output result should match the currect saved word, UI updated. The number of times the word has been played, across all games| PASS |
+| 3 | view statistics - game |    first run through different games. then enable statistics view button | the UI will show the list of scores, in descending order by final game score. The values have to match. also test the highest score and check for the right value| PASS |
+|4| play game| click on play game | board generated and UI updated| PASS |
+|5| enter word and validate word| user to enter a input as the word for the game | the attribute gets updated and UI is also updated. The score should be updated as well| PASS |
+|6| re-roll test| user to click on re-roll button | a new board should be initialized, UI updated and score goes down by 5 points| PASS |
+|7| exit game| user to click on exit button| the attributes all get updated. UI updated to display the final score| PASS |
+|8|Test Qu | Game to include Qu cases| it should be counted as 1 letter| PASS |
+|9| view statistics - setting |    first run through different games. then enable statistics view button and check the corresponding setting | the UI will show the correcct setting information used during that game | PASS |
+|10|validate word in more details| user to enter ten different words. Check if the words meet all the requirements. | Then check if the software updates to the right score or error msg| PASS |
 
 
 

@@ -48,6 +48,10 @@ public class Settings extends AppCompatActivity {
         setContentView(R.layout.activity_settings);
         so = ((StatObject)this.getApplication());
 
+        numberOfMinutes = so.minutes;
+        boardSize = so.size;
+
+
         gameMinutesSpinner = findViewById(R.id.gameMinutesSpinner);
         boardSizeSpinner = findViewById(R.id.boardSizeSpinner);
 
@@ -56,14 +60,14 @@ public class Settings extends AppCompatActivity {
                 android.R.layout.simple_spinner_item, minutes);
         minutesAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         gameMinutesSpinner.setAdapter(minutesAdapter);
-        gameMinutesSpinner.setSelection(2);
+        gameMinutesSpinner.setSelection(numberOfMinutes - 1);
 
         // initialize boardSizeSpinner with sizes presets and default to 4(x4)
         ArrayAdapter<String> sizesAdapter = new ArrayAdapter<>(this,
                 android.R.layout.simple_spinner_item, sizes);
         sizesAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         boardSizeSpinner.setAdapter(sizesAdapter);
-        boardSizeSpinner.setSelection(0);
+        boardSizeSpinner.setSelection(boardSize - 4);
 
         // When gameMinutesSpinner is clicked, set numberOfMinutes to the item selected
         gameMinutesSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -103,13 +107,10 @@ public class Settings extends AppCompatActivity {
         letterSeekbar = findViewById(R.id.letterSeekbar);
         weightSeekbar = findViewById(R.id.weightSeekbar);
 
-        // Default weights of all letters to 1
-        for (Character letter : LETTERS.toCharArray()) {
-            so.letterWeight.put(letter, 1);
-        }
+        weightSeekbar.setProgress(so.letterWeight.getOrDefault('A', 1));
+        weightSelectorValueText.setText(String.valueOf(so.letterWeight.getOrDefault('A', 1)));
 
         letterSeekbar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
-            //int progressChangedValue = 0;
 
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean b) {
@@ -165,6 +166,8 @@ public class Settings extends AppCompatActivity {
         Intent intent = new Intent();
         intent.putExtra("minutes", numberOfMinutes);
         intent.putExtra("boardSize", boardSize);
+        so.minutes = numberOfMinutes;
+        so.size = boardSize;
         setResult(RESULT_OK, intent);
         finish();
     }
@@ -179,6 +182,8 @@ public class Settings extends AppCompatActivity {
                 Intent intent = new Intent();
                 intent.putExtra("minutes", numberOfMinutes);
                 intent.putExtra("boardSize", boardSize);
+                so.minutes = numberOfMinutes;
+                so.size = boardSize;
                 setResult(RESULT_OK, intent);
                 finish();
                 return(true);

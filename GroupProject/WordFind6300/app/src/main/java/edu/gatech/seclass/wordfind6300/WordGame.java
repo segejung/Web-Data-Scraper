@@ -59,13 +59,9 @@ public class WordGame extends AppCompatActivity {
         // Keeps the display of components from shifting when the soft keyboard displays when typing
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_NOTHING);
 
-        // Gets the data of the settings from the Main Screen
-        Intent intent = getIntent();
-
-        numberOfMinutes = intent.getIntExtra("minutes", 3);
-        so.minutes = numberOfMinutes;
+        numberOfMinutes = so.minutes;
         timeLeftInMilliseconds = (long)numberOfMinutes * 60000; //3 minutes
-        boardSize = intent.getIntExtra("boardSize", 4);
+        boardSize = so.size;
         lettersCount = boardSize * boardSize;
 
         // randomly generates the board

@@ -23,6 +23,8 @@ public class StatObject extends Application implements Serializable {
     int minutes = 3;
     Map<Character, Integer> letterWeight;
 
+    final String LETTERS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
     public StatObject(){
         finalScores = new ArrayList();
         resetCounts = new ArrayList();
@@ -30,6 +32,10 @@ public class StatObject extends Application implements Serializable {
         sizeList = new ArrayList();
         minutesList = new ArrayList();
         letterWeight = new HashMap();
+        // Default weights of all letters to 1
+        for (Character letter : LETTERS.toCharArray()) {
+            letterWeight.put(letter, 1);
+        }
         letterWeights = new ArrayList();
         allWordsMap = new HashMap();
     }

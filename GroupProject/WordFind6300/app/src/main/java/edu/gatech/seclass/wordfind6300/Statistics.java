@@ -204,9 +204,9 @@ public class Statistics extends AppCompatActivity {
         return stat;
     }
     private int indexHelper(List<Integer> finalScores, List<Integer> list, int currentScore){
-        int i = 0;
+        int i = 1;
         while(i < list.size()){
-            if(currentScore > finalScores.get(i + 1)){
+            if(currentScore > finalScores.get(i)){
                 return i;
             }
             i++;

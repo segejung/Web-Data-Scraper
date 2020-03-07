@@ -23,6 +23,9 @@ import java.util.Map;
 
 public class Statistics extends AppCompatActivity {
 
+    // sorting structure should be implemented here.
+    List<Integer> indexRankListOfScores = new ArrayList();
+    int index = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,9 +34,6 @@ public class Statistics extends AppCompatActivity {
 
         String text;
         StatObject so = this.readFile();
-
-        // sorting structure should be implemented here.
-        List<Integer> indexRankListOfScores = new ArrayList();
 
         indexRankListOfScores.add(0);
         for(int i = 1; i < so.finalScores.size(); i++){
@@ -62,7 +62,6 @@ public class Statistics extends AppCompatActivity {
         TextView thirdWordCount = (TextView) findViewById(R.id.textView18);
         TextView fourthWordCount = (TextView) findViewById(R.id.textView22);
 
-        int index = 0;
         if(indexRankListOfScores.size() > 0){
             index = indexRankListOfScores.get(0);
             firstScore.setText(so.finalScores.get(index).toString());
@@ -141,9 +140,10 @@ public class Statistics extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), "No game data yet", Toast.LENGTH_SHORT).show();
                 return;
             }
-            text = so.minutesList.get(so.minutesList.size() - 1).toString();
+            index = indexRankListOfScores.get(0);
+            text = so.minutesList.get(index).toString();
             settingMinute.setText(text);
-            text = so.sizeList.get(so.sizeList.size() - 1).toString();
+            text = so.sizeList.get(index).toString();
             settingSize.setText(text);
         }
         else if (view.getId()== R.id.button5) {
@@ -153,9 +153,10 @@ public class Statistics extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), "No game data yet", Toast.LENGTH_SHORT).show();
                 return;
             }
-            text = so.minutesList.get(so.minutesList.size() - 2).toString();
+            index = indexRankListOfScores.get(1);
+            text = so.minutesList.get(index).toString();
             settingMinute.setText(text);
-            text = so.sizeList.get(so.sizeList.size() - 2).toString();
+            text = so.sizeList.get(index).toString();
             settingSize.setText(text);
         }
         else if (view.getId()== R.id.button6) {
@@ -165,9 +166,10 @@ public class Statistics extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), "No game data yet", Toast.LENGTH_SHORT).show();
                 return;
             }
-            text = so.minutesList.get(so.minutesList.size() - 3).toString();
+            index = indexRankListOfScores.get(2);
+            text = so.minutesList.get(index).toString();
             settingMinute.setText(text);
-            text = so.sizeList.get(so.sizeList.size() - 3).toString();
+            text = so.sizeList.get(index).toString();
             settingSize.setText(text);
         }
         else if (view.getId()== R.id.button7) {
@@ -177,9 +179,10 @@ public class Statistics extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), "No game data yet", Toast.LENGTH_SHORT).show();
                 return;
             }
-            text = so.minutesList.get(so.minutesList.size() - 4).toString();
+            index = indexRankListOfScores.get(3);
+            text = so.minutesList.get(index).toString();
             settingMinute.setText(text);
-            text = so.sizeList.get(so.sizeList.size() - 4).toString();
+            text = so.sizeList.get(index).toString();
             settingSize.setText(text);
         }
     }

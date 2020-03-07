@@ -15,9 +15,14 @@ import java.util.Random;
 import java.util.Collections;
 import java.util.Set;
 
+
+import android.content.DialogInterface;
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
+import android.os.Looper;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.GridView;
@@ -298,6 +303,54 @@ public class WordGame extends AppCompatActivity {
         so.finalScore = this.finalScore;
 
         writeFile();
+
+
+        // Create the object of
+        // AlertDialog Builder class
+        AlertDialog.Builder builder
+                = new AlertDialog
+                .Builder(this);
+
+        // Set the message show for the Alert time
+        builder.setMessage("Final Score = " + this.finalScore);
+
+        // Set Alert Title
+        builder.setTitle("Game Ended");
+
+        // Set Cancelable false
+        // for when the user clicks on the outside
+        // the Dialog Box then it will remain show
+        builder.setCancelable(false);
+
+        // Set the positive button with yes name
+        // OnClickListener method is use of
+        // DialogInterface interface.
+
+        builder
+                .setPositiveButton(
+                        "OK",
+                        new DialogInterface
+                                .OnClickListener() {
+
+                            @Override
+                            public void onClick(DialogInterface dialog,
+                                                int which)
+                            {
+
+                                // When the user click yes button
+                                // then app will close
+                                finish();
+                            }
+                        });
+
+        // Create the Alert dialog
+        AlertDialog alertDialog = builder.create();
+
+        // Show the Alert Dialog box
+        alertDialog.show();
+        try{ Looper.loop(); }
+        catch(RuntimeException e){}
+
     }
 
     public void writeFile(){
@@ -338,6 +391,25 @@ public class WordGame extends AppCompatActivity {
             Toast.makeText(getApplicationContext(), "ClassNotFoundException is caught", Toast.LENGTH_SHORT).show();
         }
         return so;
+    }
+
+    // When back button is pressed at the bottom left of screen, return data from settings back to
+    // Main UI
+    @Override
+    public void onBackPressed() {
+        endGame();
+    }
+
+    // When the back button at the top left of the screen is clicked, return data from settings back
+    // to Main UI
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                endGame();
+        }
+
+        return(super.onOptionsItemSelected(item));
     }
 }
 

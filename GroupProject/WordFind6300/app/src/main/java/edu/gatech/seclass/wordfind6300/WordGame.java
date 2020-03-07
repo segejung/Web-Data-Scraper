@@ -291,6 +291,9 @@ public class WordGame extends AppCompatActivity {
     private void endGame(){
         countDownTimer.cancel();
         countDownText.setText("0:00");
+        if(wordSet.size() == 0 && finalScore == 0 && so.resetCount == 0){
+            return;
+        }
         for(String word : wordSet){
             int count = so.allWordsMap.getOrDefault(word, 0);
             so.allWordsMap.put(word, count + 1);
@@ -302,6 +305,12 @@ public class WordGame extends AppCompatActivity {
         Toast.makeText(getApplicationContext(), "All entries displayed", Toast.LENGTH_SHORT).show();
         so.finalScore = this.finalScore;
 
+        finalScore = 0;
+        scoreText.setText("0");
+        wordInput.setText("");
+        positionsClicked.clear();
+        so.wordCount = 0;
+        wordSet = new HashSet();
         writeFile();
 
 

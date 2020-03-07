@@ -16,6 +16,7 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -34,26 +35,18 @@ public class Statistics extends AppCompatActivity {
         // sorting structure should be implemented here.
         List<Integer> indexRankListOfScores = new ArrayList();
 
-        for(int i = 0; i < so.finalScores.size(); i++){
-            if(indexRankListOfScores.size() == 0){
-                indexRankListOfScores.add(0);
-                continue;
-            }
+        indexRankListOfScores.add(0);
+        for(int i = 1; i < so.finalScores.size(); i++){
             int bestScoreIndex = indexRankListOfScores.get(0);
             int bestScore = so.finalScores.get(bestScoreIndex);
             int currentScore = so.finalScores.get(i);
             if(currentScore > bestScore){
                 indexRankListOfScores.add(0, i);
             } else{
-                int listPosition = 1;
-                while (listPosition < indexRankListOfScores.size() && currentScore <= bestScore) {
-                    bestScoreIndex = indexRankListOfScores.get(listPosition++);
-                    bestScore = so.finalScores.get(bestScoreIndex);
-                }
-                indexRankListOfScores.add(listPosition - 1, i);
+                indexRankListOfScores.add(indexHelper(so.finalScores, indexRankListOfScores, currentScore), i);
             }
-
         }
+
         TextView firstScore = (TextView) findViewById(R.id.textView24);
         TextView secondScore = (TextView) findViewById(R.id.textView10);
         TextView thirdScore = (TextView) findViewById(R.id.textView16);
@@ -210,5 +203,14 @@ public class Statistics extends AppCompatActivity {
         }
         return stat;
     }
-
+    private int indexHelper(List<Integer> finalScores, List<Integer> list, int currentScore){
+        int i = 1;
+        while(i < list.size()){
+            if(currentScore > finalScores.get(i)){
+                return i;
+            }
+            i++;
+        }
+        return i;
+    }
 }
